@@ -1,0 +1,129 @@
+.TH "rl::LearnableTransitionMap< State, Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::LearnableTransitionMap< State, Action > \- A transition map which can be learned\&. Implements \fBTransitionStlMap\fP for holding probabilities, and uses another \fBTransitionStlMap\fP (with StateActionStateValue = integer) to count the total number \fBexperienceTransition()\fP was called on a transition\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Transition\&.h>\fP
+.PP
+Inherits \fBrl::TransitionStlMap< State, Action, float >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef float \fBProbabilityT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionStlMap\fP< State, Action, \fBProbabilityT\fP > \fBParentT\fP"
+.br
+.ti -1c
+.RI "typedef unsigned int \fBCounterT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionStlMap\fP< State, Action, \fBCounterT\fP > \fBCountingTransitionMapT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateTransitionT\fP \fBStateTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateTransitionListT\fP \fBStateTransitionListT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateTransitionListPtrT\fP \fBStateTransitionListPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateActionStateValueT\fP \fBStateActionStateValueT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLearnableTransitionMap\fP ()"
+.br
+.ti -1c
+.RI "\fBLearnableTransitionMap\fP (const \fBLearnableTransitionMap\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~LearnableTransitionMap\fP ()"
+.br
+.ti -1c
+.RI "void \fBexperienceTransition\fP (const State &s1, const Action &a, const State &s2)"
+.br
+.ti -1c
+.RI "virtual void \fBprint\fP (std::ostream &o) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCountingTransitionMapT\fP \fBcountingMap\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action>class rl::LearnableTransitionMap< State, Action >"
+A transition map which can be learned\&. Implements \fBTransitionStlMap\fP for holding probabilities, and uses another \fBTransitionStlMap\fP (with StateActionStateValue = integer) to count the total number \fBexperienceTransition()\fP was called on a transition\&. 
+
+Based on the counting, the probability map is kept up to date\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State , class Action > typedef unsigned int \fBrl::LearnableTransitionMap\fP< State, Action >::\fBCounterT\fP"
+
+.SS "template<class State , class Action > typedef \fBTransitionStlMap\fP<State,Action,\fBCounterT\fP> \fBrl::LearnableTransitionMap\fP< State, Action >::\fBCountingTransitionMapT\fP"
+
+.SS "template<class State , class Action > typedef \fBTransitionStlMap\fP<State,Action,\fBProbabilityT\fP> \fBrl::LearnableTransitionMap\fP< State, Action >::\fBParentT\fP"
+
+.SS "template<class State , class Action > typedef float \fBrl::LearnableTransitionMap\fP< State, Action >::\fBProbabilityT\fP"
+
+.SS "template<class State , class Action > typedef \fBParentT::StateActionStateValueT\fP \fBrl::LearnableTransitionMap\fP< State, Action >::\fBStateActionStateValueT\fP"
+
+.SS "template<class State , class Action > typedef \fBParentT::StateTransitionListPtrT\fP \fBrl::LearnableTransitionMap\fP< State, Action >::\fBStateTransitionListPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBParentT::StateTransitionListT\fP \fBrl::LearnableTransitionMap\fP< State, Action >::\fBStateTransitionListT\fP"
+
+.SS "template<class State , class Action > typedef \fBParentT::StateTransitionT\fP \fBrl::LearnableTransitionMap\fP< State, Action >::\fBStateTransitionT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State , class Action > \fBrl::LearnableTransitionMap\fP< State, Action >::\fBLearnableTransitionMap\fP ()\fC [inline]\fP"
+
+.SS "template<class State , class Action > \fBrl::LearnableTransitionMap\fP< State, Action >::\fBLearnableTransitionMap\fP (const \fBLearnableTransitionMap\fP< State, Action > & o)\fC [inline]\fP"
+
+.SS "template<class State , class Action > virtual \fBrl::LearnableTransitionMap\fP< State, Action >::~\fBLearnableTransitionMap\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State , class Action > void \fBrl::LearnableTransitionMap\fP< State, Action >::experienceTransition (const State & s1, const Action & a, const State & s2)\fC [inline]\fP"
+
+.SS "template<class State , class Action > virtual void \fBrl::LearnableTransitionMap\fP< State, Action >::print (std::ostream & o) const\fC [inline]\fP, \fC [virtual]\fP"
+prints the transition map 
+.PP
+Reimplemented from \fBrl::TransitionStlMap< State, Action, float >\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class State , class Action > \fBCountingTransitionMapT\fP \fBrl::LearnableTransitionMap\fP< State, Action >::countingMap\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

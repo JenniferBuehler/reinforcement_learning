@@ -1,0 +1,69 @@
+.TH "/home/jenny/RL/rl_only/include/rl/QLearning.h" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/jenny/RL/rl_only/include/rl/QLearning.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rl/Transition\&.h>\fP
+.br
+\fC#include <rl/StateActionPair\&.h>\fP
+.br
+\fC#include <rl/StateAlgorithms\&.h>\fP
+.br
+\fC#include <rl/Exploration\&.h>\fP
+.br
+\fC#include <rl/Policy\&.h>\fP
+.br
+\fC#include <math/RandomNumber\&.h>\fP
+.br
+\fC#include <general/Exception\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include <deque>\fP
+.br
+\fC#include <set>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBrl::ActionValuePair< Action, Value >\fP"
+.br
+.RI "\fIA pair of action and value, which can be used as a key\&. The key will be the Action, therefore this datatype has to support the < operator\&. The value is simply associated with the action and plays no role for the key\&. \fP"
+.ti -1c
+.RI "class \fBrl::QLearningController< Domain, UtilityType >\fP"
+.br
+.ti -1c
+.RI "class \fBrl::QLearningController< Domain, UtilityType >::MaxExpectedUtility\fP"
+.br
+.ti -1c
+.RI "class \fBrl::QLearningController< Domain, UtilityType >::MaxQValue\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBrl\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBKEEP_AVG_CHANGE\fP   10000"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define KEEP_AVG_CHANGE   10000"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

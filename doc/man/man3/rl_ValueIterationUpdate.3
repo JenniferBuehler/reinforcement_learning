@@ -1,0 +1,198 @@
+.TH "rl::ValueIterationUpdate< State, Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::ValueIterationUpdate< State, Action > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ValueIteration\&.h>\fP
+.PP
+Inherits \fBrl::StateAlgorithm< State >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef float \fBFloatT\fP"
+.br
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBValueIterationUpdate\fP< \fBStateT\fP, \fBActionT\fP > \fBValueIterationUpdateT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBValueIterationUpdateT\fP > \fBValueIterationUpdatePtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBUtility\fP< \fBStateT\fP, \fBFloatT\fP > \fBUtilityT\fP"
+.br
+.ti -1c
+.RI "typedef \fBReward\fP< \fBStateT\fP, \fBFloatT\fP > \fBRewardT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransition\fP< \fBStateT\fP, \fBActionT\fP > \fBTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionT::StateTransitionListT\fP \fBStateTransitionListT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGenerator\fP< \fBActionT\fP > \fBActionGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef \fBMaxUtilityActionAlgorithm\fP< \fBStateT\fP, \fBActionT\fP > \fBMaxUtilityActionAlgorithmT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicy\fP< \fBStateT\fP, \fBActionT\fP > \fBPolicyT\fP"
+.br
+.ti -1c
+.RI "typedef \fBUtilityT::UtilityPtrT\fP \fBUtilityPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBRewardT::RewardPtrT\fP \fBRewardPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBRewardT::RewardConstPtrT\fP \fBRewardConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionT::TransitionConstPtrT\fP \fBTransitionConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBActionGeneratorConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicyT::PolicyPtrT\fP \fBPolicyPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicyT::PolicyConstPtrT\fP \fBPolicyConstPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBValueIterationUpdate\fP (\fBUtilityPtrT\fP &u, const \fBRewardConstPtrT\fP &r, const \fBTransitionConstPtrT\fP &t, const \fBActionGeneratorConstPtrT\fP &ag, const \fBPolicyConstPtrT\fP &p, float _discount, float _delta)"
+.br
+.ti -1c
+.RI "virtual \fB~ValueIterationUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBpreApplication\fP ()"
+.br
+.ti -1c
+.RI "void \fBpostApplication\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBapply\fP (const \fBStateT\fP &s)"
+.br
+.ti -1c
+.RI "float \fBgetDelta\fP ()"
+.br
+.ti -1c
+.RI "\fBUtilityPtrT\fP \fBgetUtility\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action>class rl::ValueIterationUpdate< State, Action >"
+Performs the update of one iteration within the loop of the value iteration algorithm, by applying each state to this update\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State, class Action> typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBActionGeneratorConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBActionGenerator\fP<\fBActionT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBActionGeneratorT\fP"
+
+.SS "template<class State, class Action> typedef Action \fBrl::ValueIterationUpdate\fP< State, Action >::\fBActionT\fP"
+
+.SS "template<class State, class Action> typedef float \fBrl::ValueIterationUpdate\fP< State, Action >::\fBFloatT\fP"
+
+.SS "template<class State, class Action> typedef \fBMaxUtilityActionAlgorithm\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBMaxUtilityActionAlgorithmT\fP"
+
+.SS "template<class State, class Action> typedef \fBPolicyT::PolicyConstPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBPolicyConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBPolicyT::PolicyPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBPolicyPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBPolicy\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBPolicyT\fP"
+
+.SS "template<class State, class Action> typedef \fBRewardT::RewardConstPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBRewardConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBRewardT::RewardPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBRewardPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBReward\fP<\fBStateT\fP,\fBFloatT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBRewardT\fP"
+
+.SS "template<class State, class Action> typedef State \fBrl::ValueIterationUpdate\fP< State, Action >::\fBStateT\fP"
+
+.SS "template<class State, class Action> typedef \fBTransitionT::StateTransitionListT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBStateTransitionListT\fP"
+
+.SS "template<class State, class Action> typedef \fBTransitionT::TransitionConstPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBTransitionConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBTransition\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBTransitionT\fP"
+
+.SS "template<class State, class Action> typedef \fBUtilityT::UtilityPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::\fBUtilityPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBUtility\fP<\fBStateT\fP,\fBFloatT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBUtilityT\fP"
+
+.SS "template<class State, class Action> typedef std::shared_ptr<\fBValueIterationUpdateT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBValueIterationUpdatePtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBValueIterationUpdate\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBValueIterationUpdateT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State, class Action> \fBrl::ValueIterationUpdate\fP< State, Action >::\fBValueIterationUpdate\fP (\fBUtilityPtrT\fP & u, const \fBRewardConstPtrT\fP & r, const \fBTransitionConstPtrT\fP & t, const \fBActionGeneratorConstPtrT\fP & ag, const \fBPolicyConstPtrT\fP & p, float _discount, float _delta)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu\fP correctly initialised (but still empty/unlearned) model of utility\&. 
+.br
+\fIr\fP correctly initialised model of reward\&. 
+.br
+\fIt\fP correctly initialised transition model\&. 
+.br
+\fIag\fP action generator (generates all possible actions) for domain\&. If this object is NULL, the policy is fixed, and parameter policy MUST be non-NULL! Responsibility of ojbect is passed\&. 
+.br
+\fIp\fP policy for domain\&. If this object is NULL, the policy is NOT fixed, and parameter ag (\fBActionGenerator\fP) MUST be non-NULL! 
+.br
+\fI_discount\fP discount factor 
+.br
+\fI_delta\fP starting value for maximum change in the utility of any state\&. If utility change for a state exceeds this value, it is updated to the new utility change\&. The changed delta value after applying all states can be retrieved with getNewDelta()\&. 
+.RE
+.PP
+
+.SS "template<class State, class Action> virtual \fBrl::ValueIterationUpdate\fP< State, Action >::~\fBValueIterationUpdate\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State, class Action> virtual bool \fBrl::ValueIterationUpdate\fP< State, Action >::apply (const \fBStateT\fP & s)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::StateAlgorithm< State >\fP\&.
+.SS "template<class State, class Action> float \fBrl::ValueIterationUpdate\fP< State, Action >::getDelta ()\fC [inline]\fP"
+
+.SS "template<class State, class Action> \fBUtilityPtrT\fP \fBrl::ValueIterationUpdate\fP< State, Action >::getUtility ()\fC [inline]\fP"
+
+.SS "template<class State, class Action> void \fBrl::ValueIterationUpdate\fP< State, Action >::postApplication ()\fC [inline]\fP"
+Has to be called after applying all states (see method apply(StateT&) ) 
+.SS "template<class State, class Action> void \fBrl::ValueIterationUpdate\fP< State, Action >::preApplication ()\fC [inline]\fP"
+Has to be called before applying all states (see method apply(StateT&) ) 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

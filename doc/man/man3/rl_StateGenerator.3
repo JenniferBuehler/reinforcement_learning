@@ -1,0 +1,102 @@
+.TH "rl::StateGenerator< State >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::StateGenerator< State > \- Iterates through all possible states by generating each possible state (or a random set of states) and applying a \fBStateAlgorithm\fP to each state\&. Knowledge of underlying domain (e\&.g\&. grid world) is to be used to generate states\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <StateAlgorithms\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStateGenerator\fP< \fBStateT\fP > \fBStateGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBStateGeneratorT\fP > \fBStateGeneratorPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBStateGeneratorT\fP > \fBStateGeneratorConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStateAlgorithm\fP< \fBStateT\fP > \fBStateAlgorithmT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStateGenerator\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~StateGenerator\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBforeachState\fP (\fBStateAlgorithmT\fP &s) const =0"
+.br
+.ti -1c
+.RI "virtual State \fBrandomState\fP () const =0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State>class rl::StateGenerator< State >"
+Iterates through all possible states by generating each possible state (or a random set of states) and applying a \fBStateAlgorithm\fP to each state\&. Knowledge of underlying domain (e\&.g\&. grid world) is to be used to generate states\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State> typedef \fBStateAlgorithm\fP<\fBStateT\fP> \fBrl::StateGenerator\fP< State >::\fBStateAlgorithmT\fP"
+
+.SS "template<class State> typedef std::shared_ptr<const \fBStateGeneratorT\fP> \fBrl::StateGenerator\fP< State >::\fBStateGeneratorConstPtrT\fP"
+
+.SS "template<class State> typedef std::shared_ptr<\fBStateGeneratorT\fP> \fBrl::StateGenerator\fP< State >::\fBStateGeneratorPtrT\fP"
+
+.SS "template<class State> typedef \fBStateGenerator\fP<\fBStateT\fP> \fBrl::StateGenerator\fP< State >::\fBStateGeneratorT\fP"
+
+.SS "template<class State> typedef State \fBrl::StateGenerator\fP< State >::\fBStateT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State> \fBrl::StateGenerator\fP< State >::\fBStateGenerator\fP ()\fC [inline]\fP"
+
+.SS "template<class State> virtual \fBrl::StateGenerator\fP< State >::~\fBStateGenerator\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State> virtual bool \fBrl::StateGenerator\fP< State >::foreachState (\fBStateAlgorithmT\fP & s) const\fC [pure virtual]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+false if errors occurred and not all states could be iterated through 
+.RE
+.PP
+
+.SS "template<class State> virtual State \fBrl::StateGenerator\fP< State >::randomState () const\fC [pure virtual]\fP"
+Generates a random state 
+.PP
+Implemented in \fBrl::GridWorldStateGenerator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

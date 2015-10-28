@@ -1,0 +1,155 @@
+.TH "rl::Transition< State, Action, StateActionStateValue >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::Transition< State, Action, StateActionStateValue > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Transition\&.h>\fP
+.PP
+Inherited by \fBrl::TransitionStlMap< State, Action, StateActionStateValue >\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBStateTransition\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef StateActionStateValue \fBStateActionStateValueT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransition\fP< \fBStateT\fP, \fBActionT\fP, StateActionStateValue > \fBTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBTransitionT\fP > \fBTransitionPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBTransitionT\fP > \fBTransitionConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStateTransition\fP \fBStateTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef std::deque< \fBStateTransitionT\fP > \fBStateTransitionListT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBStateTransitionListT\fP > \fBStateTransitionListPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransition\fP ()"
+.br
+.ti -1c
+.RI "\fBTransition\fP (const \fBTransition\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~Transition\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBgetTransitionStates\fP (const State &s, const Action &a, \fBStateTransitionListPtrT\fP &ret) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBsetTransitionState\fP (const State &s1, const Action &a, const State &s2, \fBStateActionStateValueT\fP p=1)=0"
+.br
+.ti -1c
+.RI "virtual void \fBprint\fP (std::ostream &o) const =0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action, typename StateActionStateValue = float>class rl::Transition< State, Action, StateActionStateValue >"
+Interface for a transition from a state, performing an action, leading to a target state\&. This must use knowledge of the underlying domain to determine to which destination statees an action will lead with which probability\&.
+.PP
+It is left to the implementing subclass how to manage and store the transition states\&. To access a list of states s', which can be reched from state-action pair (s,a) with probability p, a queue of such states is returned (StateTransitionListT)\&. See method \fBgetTransitionStates()\fP\&. This class can also be used as an interface to learn the transition function, by using \fBsetTransitionState()\fP (after an experienced state transition)\&.
+.PP
+It is not specified whether the list StateTransitionListT will be ordered in any way, because it is merely intended to iterate through possible target states\&. The use of smart pointers ensures that the implementing subclass can either return a new structure of StateTransitionListT (a COPY of internally used structure) or, alternatively, a pointer to an internally stored StateTransitionListT\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIState\fP template class for State description\&. Prerequisite: Must support < operator, an be uniquely identifiable, i\&.e\&. suitable to use in a std::map as key 
+.br
+\fIAction\fP template class for Action description\&. Prerequisite: Must support < operator, an be uniquely identifiable, i\&.e\&. suitable to use in a std::map as key 
+.br
+\fIStateActionStateValue\fP the value assigned to a state-action-state pair\&. This can be either a probability (float) or a number (counting of state assignments)
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef Action \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBActionT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef StateActionStateValue \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBStateActionStateValueT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef State \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBStateT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef std::shared_ptr<\fBStateTransitionListT\fP> \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBStateTransitionListPtrT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef std::deque<\fBStateTransitionT\fP> \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBStateTransitionListT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBStateTransition\fP \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBStateTransitionT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef std::shared_ptr<const \fBTransitionT\fP> \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBTransitionConstPtrT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef std::shared_ptr<\fBTransitionT\fP> \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBTransitionPtrT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBTransition\fP<\fBStateT\fP,\fBActionT\fP,StateActionStateValue> \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBTransitionT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State, class Action, typename StateActionStateValue = float> \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBTransition\fP ()\fC [inline]\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> \fBrl::Transition\fP< State, Action, StateActionStateValue >::\fBTransition\fP (const \fBTransition\fP< State, Action, StateActionStateValue > & o)\fC [inline]\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual \fBrl::Transition\fP< State, Action, StateActionStateValue >::~\fBTransition\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual bool \fBrl::Transition\fP< State, Action, StateActionStateValue >::getTransitionStates (const State & s, const Action & a, \fBStateTransitionListPtrT\fP & ret) const\fC [pure virtual]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+false if no such transition states exist (remain in same state with this action), and true if parameter ret is initialised with the result set\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrl::GridWorldTransition\fP, \fBrl::TransitionStlMap< State, Action, StateActionStateValue >\fP, \fBrl::TransitionStlMap< State, Action, float >\fP, and \fBrl::TransitionStlMap< State, Action, CounterT >\fP\&.
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual void \fBrl::Transition\fP< State, Action, StateActionStateValue >::print (std::ostream & o) const\fC [pure virtual]\fP"
+prints the transition map 
+.PP
+Implemented in \fBrl::GridWorldTransition\fP, \fBrl::LearnableTransitionMap< State, Action >\fP, \fBrl::TransitionStlMap< State, Action, StateActionStateValue >\fP, \fBrl::TransitionStlMap< State, Action, float >\fP, and \fBrl::TransitionStlMap< State, Action, CounterT >\fP\&.
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual void \fBrl::Transition\fP< State, Action, StateActionStateValue >::setTransitionState (const State & s1, const Action & a, const State & s2, \fBStateActionStateValueT\fP p = \fC1\fP)\fC [pure virtual]\fP"
+Adds a transition state, or if this transition (s1,a,s2) does exist, the assigned value p is updated\&. 
+.PP
+Implemented in \fBrl::GridWorldTransition\fP, \fBrl::TransitionStlMap< State, Action, StateActionStateValue >\fP, \fBrl::TransitionStlMap< State, Action, float >\fP, and \fBrl::TransitionStlMap< State, Action, CounterT >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

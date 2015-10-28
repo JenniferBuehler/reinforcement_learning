@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classrl_1_1_action_algorithm.html" title="rl::ActionAlgorithm\l\&lt; ActionT \&gt;" alt="" coords="5,53,135,94"/>
+<area shape="rect" id="node2" href="$classrl_1_1_q_learning_controller_1_1_max_expected_utility.html" title="rl::QLearningController\l\&lt; Domain, UtilityType\l \&gt;::MaxExpectedUtility" alt="" coords="183,5,339,61"/>
+<area shape="rect" id="node3" href="$classrl_1_1_q_learning_controller_1_1_max_q_value.html" title="rl::QLearningController\l\&lt; Domain, UtilityType\l \&gt;::MaxQValue" alt="" coords="185,85,337,141"/>
+</map>

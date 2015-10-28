@@ -1,0 +1,148 @@
+.TH "rl::MappedUtility< State, Value >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::MappedUtility< State, Value > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Utility\&.h>\fP
+.PP
+Inherits \fBrl::Utility< State, Value >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Value \fBValueT\fP"
+.br
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef \fBUtility\fP< \fBStateT\fP, \fBValueT\fP > \fBUtilityT\fP"
+.br
+.ti -1c
+.RI "typedef \fBUtilityT::UtilityPtrT\fP \fBUtilityPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBMappedUtility\fP< \fBStateT\fP, \fBValueT\fP > \fBMappedUtilityT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMappedUtility\fP (const \fBValueT\fP &_defaultValue=0)"
+.br
+.ti -1c
+.RI "\fBMappedUtility\fP (const \fBMappedUtility\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~MappedUtility\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBValueT\fP \fBgetUtility\fP (const \fBStateT\fP &s, float &mean, float &variance) const "
+.br
+.ti -1c
+.RI "virtual void \fBexperienceUtility\fP (const \fBStateT\fP &s, const \fBValueT\fP &v)"
+.br
+.ti -1c
+.RI "virtual void \fBprint\fP (std::stringstream &strng) const "
+.br
+.ti -1c
+.RI "virtual \fBUtilityPtrT\fP \fBclone\fP () const "
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::map< \fBStateT\fP, \fBValueT\fP > \fBSpecificUtilitiesMapT\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSpecificUtilitiesMapT\fP \fBspecificUtilities\fP"
+.br
+.ti -1c
+.RI "\fBValueT\fP \fBdefaultValue\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, typename Value = float>class rl::MappedUtility< State, Value >"
+Each state is uniquely associated with one utility that is assigned in \fBexperienceUtility()\fP\&. This is a simple map of State objects to values\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> typedef \fBMappedUtility\fP<\fBStateT\fP,\fBValueT\fP> \fBrl::MappedUtility\fP< State, Value >::\fBMappedUtilityT\fP"
+
+.SS "template<class State , typename Value  = float> typedef std::map<\fBStateT\fP,\fBValueT\fP> \fBrl::MappedUtility\fP< State, Value >::\fBSpecificUtilitiesMapT\fP\fC [protected]\fP"
+
+.SS "template<class State , typename Value  = float> typedef State \fBrl::MappedUtility\fP< State, Value >::\fBStateT\fP"
+
+.SS "template<class State , typename Value  = float> typedef \fBUtilityT::UtilityPtrT\fP \fBrl::MappedUtility\fP< State, Value >::\fBUtilityPtrT\fP"
+
+.SS "template<class State , typename Value  = float> typedef \fBUtility\fP<\fBStateT\fP,\fBValueT\fP> \fBrl::MappedUtility\fP< State, Value >::\fBUtilityT\fP"
+
+.SS "template<class State , typename Value  = float> typedef Value \fBrl::MappedUtility\fP< State, Value >::\fBValueT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> \fBrl::MappedUtility\fP< State, Value >::\fBMappedUtility\fP (const \fBValueT\fP & _defaultValue = \fC0\fP)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_defaultValue\fP the default utility to be returned if there is no other utility assigned 
+.RE
+.PP
+
+.SS "template<class State , typename Value  = float> \fBrl::MappedUtility\fP< State, Value >::\fBMappedUtility\fP (const \fBMappedUtility\fP< State, Value > & o)\fC [inline]\fP, \fC [explicit]\fP"
+
+.SS "template<class State , typename Value  = float> virtual \fBrl::MappedUtility\fP< State, Value >::~\fBMappedUtility\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> virtual \fBUtilityPtrT\fP \fBrl::MappedUtility\fP< State, Value >::clone () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::Utility< State, Value >\fP\&.
+.SS "template<class State , typename Value  = float> virtual void \fBrl::MappedUtility\fP< State, Value >::experienceUtility (const \fBStateT\fP & s, const \fBValueT\fP & v)\fC [inline]\fP, \fC [virtual]\fP"
+A specific utility was experienced in this state\&. It depends on the implementing subclass whether this will trigger any internal changes (e\&.g\&. learning), though in most implementations this should have an effect\&. 
+.PP
+Implements \fBrl::Utility< State, Value >\fP\&.
+.SS "template<class State , typename Value  = float> virtual \fBValueT\fP \fBrl::MappedUtility\fP< State, Value >::getUtility (const \fBStateT\fP & s, float & mean, float & variance) const\fC [inline]\fP, \fC [virtual]\fP"
+Returns utility for the state, alogn with a mean and variance expressing the confidence of this utility\&. Some subclasses may not support mean and variance\&. Find out with method \fBsupportsMeanVariance()\fP; If not supported, the values of parameters mean and variance will be undefined\&. 
+.PP
+Implements \fBrl::Utility< State, Value >\fP\&.
+.SS "template<class State , typename Value  = float> virtual void \fBrl::MappedUtility\fP< State, Value >::print (std::stringstream & strng) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::Utility< State, Value >\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> \fBValueT\fP \fBrl::MappedUtility\fP< State, Value >::defaultValue\fC [protected]\fP"
+
+.SS "template<class State , typename Value  = float> \fBSpecificUtilitiesMapT\fP \fBrl::MappedUtility\fP< State, Value >::specificUtilities\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

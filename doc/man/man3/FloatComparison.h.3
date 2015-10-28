@@ -1,0 +1,35 @@
+.TH "/home/jenny/RL/rl_only/include/math/FloatComparison.h" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/jenny/RL/rl_only/include/math/FloatComparison.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename FloatingT > bool \fBequalFloatsRelative\fP (FloatingT A, FloatingT B, FloatingT maxAbsoluteError, FloatingT maxRelativeError)"
+.br
+.ti -1c
+.RI "template<typename FloatingT > bool \fBequalFloats\fP (FloatingT A, FloatingT B, FloatingT maxAbsoluteError)"
+.br
+.ti -1c
+.RI "template<typename FloatingT > bool \fBzeroFloat\fP (FloatingT A, FloatingT maxAbsoluteError)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename FloatingT > bool equalFloats (FloatingT A, FloatingT B, FloatingT maxAbsoluteError)\fC [inline]\fP"
+simple absolute error calculation Use equalFloatsSQR if you pass A and B as squared values of their original value! The reason is, that the equation A-B <= epsilon cannot be simplified to sqr(A)-sqr(B)<=sqr(epsilon), but would mathematically be sqr(A-B)<=sqr(epsilon) which would only be equivalent to sqr(A)-2AB + sqr(B) <= sqr(epsilon), and which still needs the real values of A and B\&. 
+.SS "template<typename FloatingT > bool equalFloatsRelative (FloatingT A, FloatingT B, FloatingT maxAbsoluteError, FloatingT maxRelativeError)"
+
+.SS "template<typename FloatingT > bool zeroFloat (FloatingT A, FloatingT maxAbsoluteError)\fC [inline]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

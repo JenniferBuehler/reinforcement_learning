@@ -1,0 +1,102 @@
+.TH "rl::ActionGenerator< Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::ActionGenerator< Action > \- Iterates through all possible action by generating each possible action and applying an \fBActionAlgorithm\fP to each one\&. Knowledge of underlying domain (e\&.g\&. grid world actions up,down\&.\&.\&.) is to be used to generate actions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <StateAlgorithms\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGenerator\fP< \fBActionT\fP > \fBActionGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBActionGeneratorT\fP > \fBActionGeneratorPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBActionGeneratorT\fP > \fBActionGeneratorConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionAlgorithm\fP< \fBActionT\fP > \fBActionAlgorithmT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBActionGenerator\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ActionGenerator\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBforeachAction\fP (\fBActionAlgorithmT\fP &s) const =0"
+.br
+.ti -1c
+.RI "virtual Action \fBrandomAction\fP () const =0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class Action>class rl::ActionGenerator< Action >"
+Iterates through all possible action by generating each possible action and applying an \fBActionAlgorithm\fP to each one\&. Knowledge of underlying domain (e\&.g\&. grid world actions up,down\&.\&.\&.) is to be used to generate actions\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class Action> typedef \fBActionAlgorithm\fP<\fBActionT\fP> \fBrl::ActionGenerator\fP< Action >::\fBActionAlgorithmT\fP"
+
+.SS "template<class Action> typedef std::shared_ptr<const \fBActionGeneratorT\fP> \fBrl::ActionGenerator\fP< Action >::\fBActionGeneratorConstPtrT\fP"
+
+.SS "template<class Action> typedef std::shared_ptr<\fBActionGeneratorT\fP> \fBrl::ActionGenerator\fP< Action >::\fBActionGeneratorPtrT\fP"
+
+.SS "template<class Action> typedef \fBActionGenerator\fP<\fBActionT\fP> \fBrl::ActionGenerator\fP< Action >::\fBActionGeneratorT\fP"
+
+.SS "template<class Action> typedef Action \fBrl::ActionGenerator\fP< Action >::\fBActionT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class Action> \fBrl::ActionGenerator\fP< Action >::\fBActionGenerator\fP ()\fC [inline]\fP"
+
+.SS "template<class Action> virtual \fBrl::ActionGenerator\fP< Action >::~\fBActionGenerator\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class Action> virtual bool \fBrl::ActionGenerator\fP< Action >::foreachAction (\fBActionAlgorithmT\fP & s) const\fC [pure virtual]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+false if errors occurred and not all actions could be iterated through 
+.RE
+.PP
+
+.SS "template<class Action> virtual Action \fBrl::ActionGenerator\fP< Action >::randomAction () const\fC [pure virtual]\fP"
+Generates a random action 
+.PP
+Implemented in \fBrl::GridWorldActionGenerator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

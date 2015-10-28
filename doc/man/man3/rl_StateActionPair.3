@@ -1,0 +1,89 @@
+.TH "rl::StateActionPair< State, Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::StateActionPair< State, Action > \- A pair of state and action which can be used as a key for stl maps\&. Prerequisite is that both State and Action support the < operator\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <StateActionPair\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStateActionPair\fP (const State &_s, const Action &_a)"
+.br
+.ti -1c
+.RI "\fBStateActionPair\fP (const \fBStateActionPair\fP &o)"
+.br
+.ti -1c
+.RI "\fBStateActionPair\fP & \fBoperator=\fP (const \fBStateActionPair\fP &o)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBStateActionPair\fP &p) const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "State \fBs\fP"
+.br
+.ti -1c
+.RI "Action \fBa\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &o, const \fBStateActionPair\fP &p)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action>class rl::StateActionPair< State, Action >"
+A pair of state and action which can be used as a key for stl maps\&. Prerequisite is that both State and Action support the < operator\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State , class Action > \fBrl::StateActionPair\fP< State, Action >::\fBStateActionPair\fP (const State & _s, const Action & _a)\fC [inline]\fP, \fC [explicit]\fP"
+
+.SS "template<class State , class Action > \fBrl::StateActionPair\fP< State, Action >::\fBStateActionPair\fP (const \fBStateActionPair\fP< State, Action > & o)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State , class Action > bool \fBrl::StateActionPair\fP< State, Action >::operator< (const \fBStateActionPair\fP< State, Action > & p) const\fC [inline]\fP"
+(p\&.s<s) assesses s==p\&.s at this point in expression, because (s<p\&.s) above 
+.SS "template<class State , class Action > \fBStateActionPair\fP& \fBrl::StateActionPair\fP< State, Action >::operator= (const \fBStateActionPair\fP< State, Action > & o)\fC [inline]\fP"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<class State , class Action > std::ostream& operator<< (std::ostream & o, const \fBStateActionPair\fP< State, Action > & p)\fC [friend]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class State , class Action > Action \fBrl::StateActionPair\fP< State, Action >::a"
+
+.SS "template<class State , class Action > State \fBrl::StateActionPair\fP< State, Action >::s"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

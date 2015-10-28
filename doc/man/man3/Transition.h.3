@@ -1,0 +1,48 @@
+.TH "/home/jenny/RL/rl_only/include/rl/Transition.h" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/jenny/RL/rl_only/include/rl/Transition.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <map>\fP
+.br
+\fC#include <deque>\fP
+.br
+\fC#include <memory>\fP
+.br
+\fC#include <rl/StateActionPair\&.h>\fP
+.br
+\fC#include <rl/LogBinding\&.h>\fP
+.br
+\fC#include <general/Exception\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBrl::Transition< State, Action, StateActionStateValue >\fP"
+.br
+.ti -1c
+.RI "class \fBrl::Transition< State, Action, StateActionStateValue >::StateTransition\fP"
+.br
+.ti -1c
+.RI "class \fBrl::TransitionStlMap< State, Action, StateActionStateValue >\fP"
+.br
+.ti -1c
+.RI "class \fBrl::LearnableTransitionMap< State, Action >\fP"
+.br
+.RI "\fIA transition map which can be learned\&. Implements \fBTransitionStlMap\fP for holding probabilities, and uses another \fBTransitionStlMap\fP (with StateActionStateValue = integer) to count the total number \fBexperienceTransition()\fP was called on a transition\&. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBrl\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

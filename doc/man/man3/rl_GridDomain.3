@@ -1,0 +1,197 @@
+.TH "rl::GridDomain" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::GridDomain \- the \fBDomain\fP of the grid world\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GridWorld\&.h>\fP
+.PP
+Inherits \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBGridWorldState\fP \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef \fBMoveAction\fP \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef float \fBRewardValueTypeT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransition\fP< \fBStateT\fP, \fBActionT\fP, float > \fBTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStateGenerator\fP< \fBStateT\fP > \fBStateGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGenerator\fP< \fBActionT\fP > \fBActionGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef \fBReward\fP< \fBStateT\fP, \fBRewardValueTypeT\fP > \fBRewardT\fP"
+.br
+.ti -1c
+.RI "typedef \fBSelectedReward\fP< \fBStateT\fP > \fBSelectedRewardT\fP"
+.br
+.ti -1c
+.RI "typedef \fBDomain\fP< \fBStateT\fP, \fBActionT\fP > \fBDomainT\fP"
+.br
+.ti -1c
+.RI "typedef \fBDomainT::DomainPtrT\fP \fBDomainPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBDomainT::DomainConstPtrT\fP \fBDomainConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBGridDomain\fP > \fBGridDomainPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBGridDomain\fP > \fBGridDomainConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionT::TransitionPtrT\fP \fBTransitionPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionT::TransitionConstPtrT\fP \fBTransitionConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBRewardT::RewardConstPtrT\fP \fBRewardConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStateGeneratorT::StateGeneratorConstPtrT\fP \fBStateGeneratorConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBActionGeneratorConstPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGridDomain\fP (unsigned int _gridX, unsigned int _gridY, unsigned int _goalX, unsigned int _goalY, unsigned int _blockX, unsigned int _blockY, unsigned int _pitX, unsigned int _pitY, float _defaultReward, float _goalReward, float _pitReward, float _sideActionProbability=0\&.1)"
+.br
+.ti -1c
+.RI "virtual \fB~GridDomain\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBTransitionConstPtrT\fP \fBgetTransition\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBRewardConstPtrT\fP \fBgetReward\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBStateGeneratorConstPtrT\fP \fBgetStateGenerator\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBActionGeneratorConstPtrT\fP \fBgetActionGenerator\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBStateT\fP \fBgetStartState\fP () const "
+.br
+.ti -1c
+.RI "virtual \fBStateT\fP \fBtransferState\fP (const \fBStateT\fP &currState, const \fBActionT\fP &action)"
+.br
+.ti -1c
+.RI "virtual bool \fBisTerminalState\fP (const \fBStateT\fP &s) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+the \fBDomain\fP of the grid world\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBrl::GridDomain::ActionGeneratorConstPtrT\fP"
+
+.SS "typedef \fBActionGenerator\fP<\fBActionT\fP> \fBrl::GridDomain::ActionGeneratorT\fP"
+
+.SS "typedef \fBMoveAction\fP \fBrl::GridDomain::ActionT\fP"
+
+.SS "typedef \fBDomainT::DomainConstPtrT\fP \fBrl::GridDomain::DomainConstPtrT\fP"
+
+.SS "typedef \fBDomainT::DomainPtrT\fP \fBrl::GridDomain::DomainPtrT\fP"
+
+.SS "typedef \fBDomain\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::GridDomain::DomainT\fP"
+
+.SS "typedef std::shared_ptr<const \fBGridDomain\fP> \fBrl::GridDomain::GridDomainConstPtrT\fP"
+
+.SS "typedef std::shared_ptr<\fBGridDomain\fP> \fBrl::GridDomain::GridDomainPtrT\fP"
+
+.SS "typedef \fBRewardT::RewardConstPtrT\fP \fBrl::GridDomain::RewardConstPtrT\fP"
+
+.SS "typedef \fBReward\fP<\fBStateT\fP,\fBRewardValueTypeT\fP> \fBrl::GridDomain::RewardT\fP"
+
+.SS "typedef float \fBrl::GridDomain::RewardValueTypeT\fP"
+
+.SS "typedef \fBSelectedReward\fP<\fBStateT\fP> \fBrl::GridDomain::SelectedRewardT\fP"
+
+.SS "typedef \fBStateGeneratorT::StateGeneratorConstPtrT\fP \fBrl::GridDomain::StateGeneratorConstPtrT\fP"
+
+.SS "typedef \fBStateGenerator\fP<\fBStateT\fP> \fBrl::GridDomain::StateGeneratorT\fP"
+
+.SS "typedef \fBGridWorldState\fP \fBrl::GridDomain::StateT\fP"
+
+.SS "typedef \fBTransitionT::TransitionConstPtrT\fP \fBrl::GridDomain::TransitionConstPtrT\fP"
+
+.SS "typedef \fBTransitionT::TransitionPtrT\fP \fBrl::GridDomain::TransitionPtrT\fP"
+
+.SS "typedef \fBTransition\fP<\fBStateT\fP,\fBActionT\fP,float> \fBrl::GridDomain::TransitionT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "rl::GridDomain::GridDomain (unsigned int _gridX, unsigned int _gridY, unsigned int _goalX, unsigned int _goalY, unsigned int _blockX, unsigned int _blockY, unsigned int _pitX, unsigned int _pitY, float _defaultReward, float _goalReward, float _pitReward, float _sideActionProbability = \fC0\&.1\fP)\fC [inline]\fP"
+
+.SS "virtual rl::GridDomain::~GridDomain ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBActionGeneratorConstPtrT\fP rl::GridDomain::getActionGenerator () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+.SS "virtual \fBRewardConstPtrT\fP rl::GridDomain::getReward () const\fC [inline]\fP, \fC [virtual]\fP"
+NULL if no default reward function is provided by domain\&. This means only learning algorithms can be used which learn the reward function\&. 
+.PP
+Implements \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+.SS "virtual \fBStateT\fP rl::GridDomain::getStartState () const\fC [inline]\fP, \fC [virtual]\fP"
+returns a default start state for the world, or the start state which was explicitly set in the domain 
+.PP
+Implements \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+.SS "virtual \fBStateGeneratorConstPtrT\fP rl::GridDomain::getStateGenerator () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+.SS "virtual \fBTransitionConstPtrT\fP rl::GridDomain::getTransition () const\fC [inline]\fP, \fC [virtual]\fP"
+NULL if no default transition function is provided by domain\&. This means only learning algorithms can be used which learn the transition function\&. 
+.PP
+Implements \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+.SS "virtual bool rl::GridDomain::isTerminalState (const \fBStateT\fP & s) const\fC [inline]\fP, \fC [virtual]\fP"
+returns true if this state is terminal 
+.PP
+Implements \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+.SS "virtual \fBStateT\fP rl::GridDomain::transferState (const \fBStateT\fP & currState, const \fBActionT\fP & action)\fC [inline]\fP, \fC [virtual]\fP"
+Uses a pre-known transition table to transfer the state in a probablistic manner 
+.PP
+Implements \fBrl::Domain< GridWorldState, MoveAction >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

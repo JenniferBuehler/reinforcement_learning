@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classrl_1_1_state_algorithm.html" title="An algorithm to operate on one State object. " alt="" coords="5,104,128,145"/>
+<area shape="rect" id="node2" href="$classrl_1_1_policy_generation_algorithm.html" title="Generates a policy out of a utility and transition function. " alt="" coords="176,5,393,47"/>
+<area shape="rect" id="node3" href="$classrl_1_1_policy_initialisation.html" title="rl::PolicyInitialisation\l\&lt; State, Action \&gt;" alt="" coords="213,71,356,112"/>
+<area shape="rect" id="node4" href="$classrl_1_1_policy_iteration_update.html" title="Implements one iteration update for policy iteration algorithm. method preApplication() has to be cal..." alt="" coords="203,136,366,177"/>
+<area shape="rect" id="node5" href="$classrl_1_1_value_iteration_update.html" title="rl::ValueIterationUpdate\l\&lt; State, Action \&gt;" alt="" coords="205,201,364,243"/>
+</map>

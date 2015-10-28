@@ -1,0 +1,110 @@
+.TH "rl::ActionValuePair< Action, Value >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::ActionValuePair< Action, Value > \- A pair of action and value, which can be used as a key\&. The key will be the Action, therefore this datatype has to support the < operator\&. The value is simply associated with the action and plays no role for the key\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <QLearning\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef Value \fBValueT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBActionValuePair\fP ()"
+.br
+.ti -1c
+.RI "\fBActionValuePair\fP (const \fBActionT\fP &_a, const \fBValueT\fP &_v)"
+.br
+.ti -1c
+.RI "\fBActionValuePair\fP (const \fBActionValuePair\fP &o)"
+.br
+.ti -1c
+.RI "\fBActionValuePair\fP & \fBoperator=\fP (const \fBActionValuePair\fP &o)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBActionValuePair\fP &p) const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBActionT\fP \fBa\fP"
+.br
+.ti -1c
+.RI "\fBValueT\fP \fBv\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &o, const \fBActionValuePair\fP &p)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class Action, typename Value>class rl::ActionValuePair< Action, Value >"
+A pair of action and value, which can be used as a key\&. The key will be the Action, therefore this datatype has to support the < operator\&. The value is simply associated with the action and plays no role for the key\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class Action, typename Value> typedef Action \fBrl::ActionValuePair\fP< Action, Value >::\fBActionT\fP"
+
+.SS "template<class Action, typename Value> typedef Value \fBrl::ActionValuePair\fP< Action, Value >::\fBValueT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class Action, typename Value> \fBrl::ActionValuePair\fP< Action, Value >::\fBActionValuePair\fP ()\fC [inline]\fP"
+
+.SS "template<class Action, typename Value> \fBrl::ActionValuePair\fP< Action, Value >::\fBActionValuePair\fP (const \fBActionT\fP & _a, const \fBValueT\fP & _v)\fC [inline]\fP"
+
+.SS "template<class Action, typename Value> \fBrl::ActionValuePair\fP< Action, Value >::\fBActionValuePair\fP (const \fBActionValuePair\fP< Action, Value > & o)\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class Action, typename Value> bool \fBrl::ActionValuePair\fP< Action, Value >::operator< (const \fBActionValuePair\fP< Action, Value > & p) const\fC [inline]\fP"
+
+.SS "template<class Action, typename Value> \fBActionValuePair\fP& \fBrl::ActionValuePair\fP< Action, Value >::operator= (const \fBActionValuePair\fP< Action, Value > & o)\fC [inline]\fP"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<class Action, typename Value> std::ostream& operator<< (std::ostream & o, const \fBActionValuePair\fP< Action, Value > & p)\fC [friend]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class Action, typename Value> \fBActionT\fP \fBrl::ActionValuePair\fP< Action, Value >::a"
+
+.SS "template<class Action, typename Value> \fBValueT\fP \fBrl::ActionValuePair\fP< Action, Value >::v"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

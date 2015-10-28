@@ -1,0 +1,129 @@
+.TH "rl::GridWorldState" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::GridWorldState \- State of the grid world\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GridWorld\&.h>\fP
+.PP
+Inherits \fBrl::StateBase\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBStateBase\fP \fBStateT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGridWorldState\fP (int _x=0, int _y=0)"
+.br
+.ti -1c
+.RI "\fBGridWorldState\fP (const \fBGridWorldState\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~GridWorldState\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBgetX\fP () const "
+.br
+.ti -1c
+.RI "unsigned int \fBgetY\fP () const "
+.br
+.ti -1c
+.RI "\fBGridWorldState\fP & \fBoperator=\fP (const \fBGridWorldState\fP &o)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBx\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBy\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBless\fP (const \fBStateT\fP &s) const "
+.br
+.ti -1c
+.RI "virtual void \fBassign\fP (const \fBStateBase\fP &s)"
+.br
+.ti -1c
+.RI "void \fBassignImpl\fP (const \fBGridWorldState\fP &o)"
+.br
+.ti -1c
+.RI "virtual void \fBprint\fP (std::ostream &o) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+State of the grid world\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBStateBase\fP \fBrl::GridWorldState::StateT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "rl::GridWorldState::GridWorldState (int _x = \fC0\fP, int _y = \fC0\fP)\fC [inline]\fP"
+
+.SS "rl::GridWorldState::GridWorldState (const \fBGridWorldState\fP & o)\fC [inline]\fP"
+
+.SS "virtual rl::GridWorldState::~GridWorldState ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void rl::GridWorldState::assign (const \fBStateBase\fP & o)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+Assign another object of the same type (to work as a copy constructor)\&. This will need a dynamic_cast in the subclass\&. If it's not of the same type or can't be assigned, an exception could be thrown or a warning printed\&. It is also stronly recommended to implement a = operator for all subclasses, for efficiency reasons when using templates\&. This method is only supplied to enforce consistency\&. It will be called from this base class = operator\&. 
+.PP
+Implements \fBrl::StateBase\fP\&.
+.SS "void rl::GridWorldState::assignImpl (const \fBGridWorldState\fP & o)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "unsigned int rl::GridWorldState::getX () const\fC [inline]\fP"
+
+.SS "unsigned int rl::GridWorldState::getY () const\fC [inline]\fP"
+
+.SS "virtual bool rl::GridWorldState::less (const \fBStateT\fP & s) const\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::StateBase\fP\&.
+.SS "\fBGridWorldState\fP& rl::GridWorldState::operator= (const \fBGridWorldState\fP & o)\fC [inline]\fP"
+
+.SS "virtual void rl::GridWorldState::print (std::ostream & o) const\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+print description of the state into ostream o, and return o\&. 
+.PP
+Implements \fBrl::StateBase\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned int rl::GridWorldState::x"
+
+.SS "unsigned int rl::GridWorldState::y"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

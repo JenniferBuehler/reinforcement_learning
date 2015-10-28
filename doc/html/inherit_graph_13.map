@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classrl_1_1_learning_controller.html" title="rl::LearningController\l\&lt; Domain, float \&gt;" alt="" coords="5,39,148,80"/>
+<area shape="rect" id="node2" href="$classrl_1_1_policy_iteration_controller.html" title="rl::PolicyIterationController\l\&lt; Domain \&gt;" alt="" coords="196,5,372,47"/>
+<area shape="rect" id="node3" href="$classrl_1_1_value_iteration_controller.html" title="rl::ValueIterationController\l\&lt; Domain \&gt;" alt="" coords="197,71,371,112"/>
+</map>

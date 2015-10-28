@@ -1,0 +1,187 @@
+.TH "rl::Domain< State, Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::Domain< State, Action > \- Base class for all domains, implementing certain aspects which need domain knowledge\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Domain\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef float \fBRewardValueTypeT\fP"
+.br
+.ti -1c
+.RI "typedef \fBDomain\fP< \fBStateT\fP, \fBActionT\fP > \fBDomainT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBDomainT\fP > \fBDomainPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBDomainT\fP > \fBDomainConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransition\fP< \fBStateT\fP, \fBActionT\fP, float > \fBTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBReward\fP< \fBStateT\fP, \fBRewardValueTypeT\fP > \fBRewardT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStateGenerator\fP< \fBStateT\fP > \fBStateGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGenerator\fP< \fBActionT\fP > \fBActionGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionT::TransitionConstPtrT\fP \fBTransitionConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBRewardT::RewardConstPtrT\fP \fBRewardConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBActionGeneratorConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBStateGeneratorT::StateGeneratorConstPtrT\fP \fBStateGeneratorConstPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDomain\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Domain\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBTransitionConstPtrT\fP \fBgetTransition\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBRewardConstPtrT\fP \fBgetReward\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBStateGeneratorConstPtrT\fP \fBgetStateGenerator\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBActionGeneratorConstPtrT\fP \fBgetActionGenerator\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBStateT\fP \fBgetStartState\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBStateT\fP \fBtransferState\fP (const \fBStateT\fP &currState, const \fBActionT\fP &action)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBisTerminalState\fP (const \fBStateT\fP &s) const =0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action>class rl::Domain< State, Action >"
+Base class for all domains, implementing certain aspects which need domain knowledge\&. 
+
+The following typedefs must be provided by all implementing subclasses:
+.IP "\(bu" 2
+StateT a typedef over the State template parameter
+.IP "\(bu" 2
+ActionT a typedef over the Action template parameter
+.IP "\(bu" 2
+RewardValueTypeT the reward value type which is returned by the reward function
+.IP "\(bu" 2
+TransitionT correctly parameterized \fBTransition\fP (base class!) 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State, class Action> typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBrl::Domain\fP< State, Action >::\fBActionGeneratorConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBActionGenerator\fP<\fBActionT\fP> \fBrl::Domain\fP< State, Action >::\fBActionGeneratorT\fP"
+
+.SS "template<class State, class Action> typedef Action \fBrl::Domain\fP< State, Action >::\fBActionT\fP"
+
+.SS "template<class State, class Action> typedef std::shared_ptr<const \fBDomainT\fP> \fBrl::Domain\fP< State, Action >::\fBDomainConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef std::shared_ptr<\fBDomainT\fP> \fBrl::Domain\fP< State, Action >::\fBDomainPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBDomain\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::Domain\fP< State, Action >::\fBDomainT\fP"
+
+.SS "template<class State, class Action> typedef \fBRewardT::RewardConstPtrT\fP \fBrl::Domain\fP< State, Action >::\fBRewardConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBReward\fP<\fBStateT\fP,\fBRewardValueTypeT\fP> \fBrl::Domain\fP< State, Action >::\fBRewardT\fP"
+
+.SS "template<class State, class Action> typedef float \fBrl::Domain\fP< State, Action >::\fBRewardValueTypeT\fP"
+
+.SS "template<class State, class Action> typedef \fBStateGeneratorT::StateGeneratorConstPtrT\fP \fBrl::Domain\fP< State, Action >::\fBStateGeneratorConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBStateGenerator\fP<\fBStateT\fP> \fBrl::Domain\fP< State, Action >::\fBStateGeneratorT\fP"
+
+.SS "template<class State, class Action> typedef State \fBrl::Domain\fP< State, Action >::\fBStateT\fP"
+
+.SS "template<class State, class Action> typedef \fBTransitionT::TransitionConstPtrT\fP \fBrl::Domain\fP< State, Action >::\fBTransitionConstPtrT\fP"
+
+.SS "template<class State, class Action> typedef \fBTransition\fP<\fBStateT\fP,\fBActionT\fP,float> \fBrl::Domain\fP< State, Action >::\fBTransitionT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State, class Action> \fBrl::Domain\fP< State, Action >::\fBDomain\fP ()\fC [inline]\fP"
+
+.SS "template<class State, class Action> virtual \fBrl::Domain\fP< State, Action >::~\fBDomain\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State, class Action> virtual \fBActionGeneratorConstPtrT\fP \fBrl::Domain\fP< State, Action >::getActionGenerator () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBrl::GridDomain\fP\&.
+.SS "template<class State, class Action> virtual \fBRewardConstPtrT\fP \fBrl::Domain\fP< State, Action >::getReward () const\fC [pure virtual]\fP"
+NULL if no default reward function is provided by domain\&. This means only learning algorithms can be used which learn the reward function\&. 
+.PP
+Implemented in \fBrl::GridDomain\fP\&.
+.SS "template<class State, class Action> virtual \fBStateT\fP \fBrl::Domain\fP< State, Action >::getStartState () const\fC [pure virtual]\fP"
+returns a default start state for the world, or the start state which was explicitly set in the domain 
+.PP
+Implemented in \fBrl::GridDomain\fP\&.
+.SS "template<class State, class Action> virtual \fBStateGeneratorConstPtrT\fP \fBrl::Domain\fP< State, Action >::getStateGenerator () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBrl::GridDomain\fP\&.
+.SS "template<class State, class Action> virtual \fBTransitionConstPtrT\fP \fBrl::Domain\fP< State, Action >::getTransition () const\fC [pure virtual]\fP"
+NULL if no default transition function is provided by domain\&. This means only learning algorithms can be used which learn the transition function\&. 
+.PP
+Implemented in \fBrl::GridDomain\fP\&.
+.SS "template<class State, class Action> virtual bool \fBrl::Domain\fP< State, Action >::isTerminalState (const \fBStateT\fP & s) const\fC [pure virtual]\fP"
+returns true if this state is terminal 
+.PP
+Implemented in \fBrl::GridDomain\fP\&.
+.SS "template<class State, class Action> virtual \fBStateT\fP \fBrl::Domain\fP< State, Action >::transferState (const \fBStateT\fP & currState, const \fBActionT\fP & action)\fC [pure virtual]\fP"
+Based on the domain knowledge, an action is to be performed from the current state (parameter currState) to lead to a new state\&. The new state is returned\&. In terminal states, the same state should be returned, because we can't transfer out of it\&. 
+.PP
+Implemented in \fBrl::GridDomain\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

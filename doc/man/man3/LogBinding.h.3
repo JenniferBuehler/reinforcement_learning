@@ -1,0 +1,73 @@
+.TH "/home/jenny/RL/rl_only/include/rl/LogBinding.h" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/jenny/RL/rl_only/include/rl/LogBinding.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBLog\fP"
+.br
+.RI "\fIClass to bind to a certain type of logging\&. \fP"
+.ti -1c
+.RI "class \fBStdLog\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPRINT_INIT\fP()"
+.br
+.ti -1c
+.RI "#define \fBPRINTMSG\fP(msg)"
+.br
+.ti -1c
+.RI "#define \fBPRINTERROR\fP(msg)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define PRINT_INIT()"
+\fBValue:\fP
+.PP
+.nf
+{\
+    if (Log::Singleton) {\
+        std::cerr<<"Singleton already set, overwriting!"<<std::endl;\
+    }\\
+	Log::Singleton=std::shared_ptr<Log>(new StdLog()); \
+}
+.fi
+.SS "#define PRINTERROR(msg)"
+\fBValue:\fP
+.PP
+.nf
+{\
+    std::stringstream _str_; \
+    _str_<<"ERROR: "<<msg<<" - "<< __FILE__<<", "<<__LINE__; \\
+	Log::printLn(_str_); \
+}
+.fi
+.SS "#define PRINTMSG(msg)"
+\fBValue:\fP
+.PP
+.nf
+{\
+    std::stringstream _str_; \
+    _str_<<msg<<" - "<< __FILE__<<", "<<__LINE__; \\
+	Log::printLn(_str_); \
+}
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

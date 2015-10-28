@@ -1,0 +1,115 @@
+.TH "Log" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Log \- Class to bind to a certain type of logging\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LogBinding\&.h>\fP
+.PP
+Inherited by \fBStdLog\fP\&.
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBprint\fP (const std::stringstream &str)"
+.br
+.ti -1c
+.RI "static void \fBprintError\fP (const std::stringstream &str)"
+.br
+.ti -1c
+.RI "static void \fBprint\fP (const char *str)"
+.br
+.ti -1c
+.RI "static void \fBprintError\fP (const char *str)"
+.br
+.ti -1c
+.RI "static void \fBprintLn\fP (const std::stringstream &str)"
+.br
+.ti -1c
+.RI "static void \fBprintErrorLn\fP (const std::stringstream &str)"
+.br
+.ti -1c
+.RI "static void \fBprintLn\fP (const char *str)"
+.br
+.ti -1c
+.RI "static void \fBprintErrorLn\fP (const char *str)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::shared_ptr< \fBLog\fP > \fBSingleton\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBimplPrint\fP (const std::stringstream &str)=0"
+.br
+.ti -1c
+.RI "virtual void \fBimplPrintError\fP (const std::stringstream &str)=0"
+.br
+.ti -1c
+.RI "virtual void \fBimplPrint\fP (const char *str)=0"
+.br
+.ti -1c
+.RI "virtual void \fBimplPrintError\fP (const char *str)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class to bind to a certain type of logging\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Log::implPrint (const std::stringstream & str)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.SS "virtual void Log::implPrint (const char * str)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.SS "virtual void Log::implPrintError (const std::stringstream & str)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.SS "virtual void Log::implPrintError (const char * str)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.SS "static void Log::print (const std::stringstream & str)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void Log::print (const char * str)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void Log::printError (const std::stringstream & str)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void Log::printError (const char * str)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void Log::printErrorLn (const std::stringstream & str)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void Log::printErrorLn (const char * str)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void Log::printLn (const std::stringstream & str)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void Log::printLn (const char * str)\fC [inline]\fP, \fC [static]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::shared_ptr< \fBLog\fP > Log::Singleton\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

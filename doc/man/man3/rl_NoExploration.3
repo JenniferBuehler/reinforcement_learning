@@ -1,0 +1,79 @@
+.TH "rl::NoExploration< UtilityValue, FrequencyType >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::NoExploration< UtilityValue, FrequencyType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Exploration\&.h>\fP
+.PP
+Inherits \fBrl::Exploration< UtilityValue, FrequencyType >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef UtilityValue \fBUtilityT\fP"
+.br
+.ti -1c
+.RI "typedef FrequencyType \fBFrequencyT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNoExploration\fP ()"
+.br
+.ti -1c
+.RI "\fBNoExploration\fP (const \fBNoExploration\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~NoExploration\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBUtilityT\fP \fBgetEstimatedReward\fP (const \fBUtilityT\fP &u, const \fBFrequencyT\fP &f) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename UtilityValue = float, typename FrequencyType = unsigned int>class rl::NoExploration< UtilityValue, FrequencyType >"
+No exploration to be performed by strategy function\&. Always the same utility is returned as passed into getEstimateReward()\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> typedef FrequencyType \fBrl::NoExploration\fP< UtilityValue, FrequencyType >::\fBFrequencyT\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> typedef UtilityValue \fBrl::NoExploration\fP< UtilityValue, FrequencyType >::\fBUtilityT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> \fBrl::NoExploration\fP< UtilityValue, FrequencyType >::\fBNoExploration\fP ()\fC [inline]\fP, \fC [explicit]\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> \fBrl::NoExploration\fP< UtilityValue, FrequencyType >::\fBNoExploration\fP (const \fBNoExploration\fP< UtilityValue, FrequencyType > & o)\fC [inline]\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> virtual \fBrl::NoExploration\fP< UtilityValue, FrequencyType >::~\fBNoExploration\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> virtual \fBUtilityT\fP \fBrl::NoExploration\fP< UtilityValue, FrequencyType >::getEstimatedReward (const \fBUtilityT\fP & u, const \fBFrequencyT\fP & f) const\fC [inline]\fP, \fC [virtual]\fP"
+returns an estimation of the expected reward given the utility u (e\&.g\&. of doing an action in a particular state) and the frequency f how often this has been tried before\&. 
+.PP
+Implements \fBrl::Exploration< UtilityValue, FrequencyType >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

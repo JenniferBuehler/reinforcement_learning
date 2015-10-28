@@ -1,0 +1,77 @@
+.TH "/home/jenny/RL/rl_only/include/rl/ValueIteration.h" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/jenny/RL/rl_only/include/rl/ValueIteration.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rl/MaxUtility\&.h>\fP
+.br
+\fC#include <rl/State\&.h>\fP
+.br
+\fC#include <rl/Action\&.h>\fP
+.br
+\fC#include <rl/StateAlgorithms\&.h>\fP
+.br
+\fC#include <rl/Utility\&.h>\fP
+.br
+\fC#include <rl/Reward\&.h>\fP
+.br
+\fC#include <rl/Transition\&.h>\fP
+.br
+\fC#include <rl/Policy\&.h>\fP
+.br
+\fC#include <rl/LogBinding\&.h>\fP
+.br
+\fC#include <rl/Controller\&.h>\fP
+.br
+\fC#include <math/FloatComparison\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBrl::PolicyGenerationAlgorithm< State, Action, UtilityDatatype >\fP"
+.br
+.RI "\fIGenerates a policy out of a utility and transition function\&. \fP"
+.ti -1c
+.RI "class \fBrl::ValueIterationUpdate< State, Action >\fP"
+.br
+.ti -1c
+.RI "class \fBrl::ValueIterationController< Domain >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBrl\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBZERO_EPSILON\fP   1e-07"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class State , class Action > std::shared_ptr< Utility< State > > \fBrl::valueIteration\fP (std::shared_ptr< Utility< State > > u, const std::shared_ptr< const Reward< State > > r, const std::shared_ptr< const Transition< State, Action > > t, const std::shared_ptr< const ActionGenerator< Action > > ag, const std::shared_ptr< const StateGenerator< State > > sg, float discount, float maxErr)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ZERO_EPSILON   1e-07"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

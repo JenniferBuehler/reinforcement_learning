@@ -1,0 +1,118 @@
+.TH "rl::PolicyInitialisation< State, Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::PolicyInitialisation< State, Action > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PolicyIteration\&.h>\fP
+.PP
+Inherits \fBrl::StateAlgorithm< State >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicy\fP< \fBStateT\fP, \fBActionT\fP > \fBPolicyT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGenerator\fP< \fBActionT\fP > \fBActionGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicyInitialisation\fP< \fBStateT\fP, \fBActionT\fP > \fBPolicyInitialisationT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBPolicyInitialisationT\fP > \fBPolicyInitialisationPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicyT::PolicyPtrT\fP \fBPolicyPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBActionGeneratorConstPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolicyInitialisation\fP (const \fBPolicyPtrT\fP &p, const \fBActionGeneratorConstPtrT\fP &_actionGenerator)"
+.br
+.ti -1c
+.RI "virtual \fB~PolicyInitialisation\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBapply\fP (const \fBStateT\fP &s)"
+.br
+.ti -1c
+.RI "\fBPolicyPtrT\fP \fBgetPolicy\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action>class rl::PolicyInitialisation< State, Action >"
+Initialises a policy for each state with a random action 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State , class Action > typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBrl::PolicyInitialisation\fP< State, Action >::\fBActionGeneratorConstPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBActionGenerator\fP<\fBActionT\fP> \fBrl::PolicyInitialisation\fP< State, Action >::\fBActionGeneratorT\fP"
+
+.SS "template<class State , class Action > typedef Action \fBrl::PolicyInitialisation\fP< State, Action >::\fBActionT\fP"
+
+.SS "template<class State , class Action > typedef std::shared_ptr<\fBPolicyInitialisationT\fP> \fBrl::PolicyInitialisation\fP< State, Action >::\fBPolicyInitialisationPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBPolicyInitialisation\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::PolicyInitialisation\fP< State, Action >::\fBPolicyInitialisationT\fP"
+
+.SS "template<class State , class Action > typedef \fBPolicyT::PolicyPtrT\fP \fBrl::PolicyInitialisation\fP< State, Action >::\fBPolicyPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBPolicy\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::PolicyInitialisation\fP< State, Action >::\fBPolicyT\fP"
+
+.SS "template<class State , class Action > typedef State \fBrl::PolicyInitialisation\fP< State, Action >::\fBStateT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State , class Action > \fBrl::PolicyInitialisation\fP< State, Action >::\fBPolicyInitialisation\fP (const \fBPolicyPtrT\fP & p, const \fBActionGeneratorConstPtrT\fP & _actionGenerator)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP correctly initialised (but still empty/unlearned) policy\&. 
+.br
+\fI_actionGenerator\fP the action generator to use This object will be changed in the course of applying this \fBStateAlgorithm\fP\&. 
+.RE
+.PP
+
+.SS "template<class State , class Action > virtual \fBrl::PolicyInitialisation\fP< State, Action >::~\fBPolicyInitialisation\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State , class Action > virtual bool \fBrl::PolicyInitialisation\fP< State, Action >::apply (const \fBStateT\fP & s)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::StateAlgorithm< State >\fP\&.
+.SS "template<class State , class Action > \fBPolicyPtrT\fP \fBrl::PolicyInitialisation\fP< State, Action >::getPolicy ()\fC [inline]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

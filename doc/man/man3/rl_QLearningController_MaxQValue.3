@@ -1,0 +1,71 @@
+.TH "rl::QLearningController< Domain, UtilityType >::MaxQValue" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::QLearningController< Domain, UtilityType >::MaxQValue \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <QLearning\&.h>\fP
+.PP
+Inherits \fBrl::ActionAlgorithm< ActionT >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMaxQValue\fP (const \fBQLearningControllerT\fP &_qlearn, const \fBStateT\fP &_s)"
+.br
+.ti -1c
+.RI "virtual \fB~MaxQValue\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBapply\fP (const \fBActionT\fP &a)"
+.br
+.ti -1c
+.RI "bool \fBhasResult\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisNewAction\fP ()"
+.br
+.ti -1c
+.RI "\fBActionValuePairT\fP \fBgetMaxEntry\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class Domain, typename UtilityType = float>class rl::QLearningController< Domain, UtilityType >::MaxQValue"
+Finds the action with the maximum associated q-value, that is, finds max_over_a(Q[s,a])\&. If the best action found so far is not in the q-table yet, \fBisNewAction()\fP will return true, and getMaxAction() will then return an action with defaultQ as utility\&. This will be an action which has been tried and was not in the q-table yet, when defaultQ was higher than all utilities assigned to other actions from this state\&.
+.PP
+IMPORTANT: This class should only be used internally, while the qlearning object passed in constructor is valid and unchanged 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class Domain , typename UtilityType  = float> \fBrl::QLearningController\fP< \fBDomain\fP, UtilityType >::MaxQValue::MaxQValue (const \fBQLearningControllerT\fP & _qlearn, const \fBStateT\fP & _s)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_qlearn\fP the \fBQLearningController\fP object\&. Reference is kept internally! 
+.br
+\fI_s\fP the state from which the optimal action will be chosen 
+.RE
+.PP
+
+.SS "template<class Domain , typename UtilityType  = float> virtual \fBrl::QLearningController\fP< \fBDomain\fP, UtilityType >::MaxQValue::~MaxQValue ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class Domain , typename UtilityType  = float> virtual bool \fBrl::QLearningController\fP< \fBDomain\fP, UtilityType >::MaxQValue::apply (const \fBActionT\fP & a)\fC [inline]\fP, \fC [virtual]\fP"
+
+.SS "template<class Domain , typename UtilityType  = float> \fBActionValuePairT\fP \fBrl::QLearningController\fP< \fBDomain\fP, UtilityType >::MaxQValue::getMaxEntry ()\fC [inline]\fP"
+
+.SS "template<class Domain , typename UtilityType  = float> bool \fBrl::QLearningController\fP< \fBDomain\fP, UtilityType >::MaxQValue::hasResult ()\fC [inline]\fP"
+
+.SS "template<class Domain , typename UtilityType  = float> bool \fBrl::QLearningController\fP< \fBDomain\fP, UtilityType >::MaxQValue::isNewAction ()\fC [inline]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

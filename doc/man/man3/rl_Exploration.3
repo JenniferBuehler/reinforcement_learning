@@ -1,0 +1,97 @@
+.TH "rl::Exploration< UtilityValue, FrequencyType >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::Exploration< UtilityValue, FrequencyType > \- Interface for an exploration function, taking an utility value (e\&.g\&. q-value) and a frequency of an action tried in a state as input, and returning a utility value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Exploration\&.h>\fP
+.PP
+Inherited by \fBrl::NoExploration< UtilityValue, FrequencyType >\fP, and \fBrl::SimpleExploration< UtilityValue, FrequencyType >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef UtilityValue \fBUtilityT\fP"
+.br
+.ti -1c
+.RI "typedef FrequencyType \fBFrequencyT\fP"
+.br
+.ti -1c
+.RI "typedef \fBExploration\fP< \fBUtilityT\fP, \fBFrequencyT\fP > \fBExplorationT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBExplorationT\fP > \fBExplorationPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBExplorationT\fP > \fBExplorationConstPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBExploration\fP ()"
+.br
+.ti -1c
+.RI "\fBExploration\fP (const \fBExploration\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~Exploration\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBUtilityT\fP \fBgetEstimatedReward\fP (const \fBUtilityT\fP &u, const \fBFrequencyT\fP &f) const =0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename UtilityValue = float, typename FrequencyType = unsigned int>class rl::Exploration< UtilityValue, FrequencyType >"
+Interface for an exploration function, taking an utility value (e\&.g\&. q-value) and a frequency of an action tried in a state as input, and returning a utility value\&. 
+
+The function return value should increase with utility value and decrease with an increasing n value\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> typedef std::shared_ptr<const \fBExplorationT\fP> \fBrl::Exploration\fP< UtilityValue, FrequencyType >::\fBExplorationConstPtrT\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> typedef std::shared_ptr<\fBExplorationT\fP> \fBrl::Exploration\fP< UtilityValue, FrequencyType >::\fBExplorationPtrT\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> typedef \fBExploration\fP<\fBUtilityT\fP,\fBFrequencyT\fP> \fBrl::Exploration\fP< UtilityValue, FrequencyType >::\fBExplorationT\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> typedef FrequencyType \fBrl::Exploration\fP< UtilityValue, FrequencyType >::\fBFrequencyT\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> typedef UtilityValue \fBrl::Exploration\fP< UtilityValue, FrequencyType >::\fBUtilityT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> \fBrl::Exploration\fP< UtilityValue, FrequencyType >::\fBExploration\fP ()\fC [inline]\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> \fBrl::Exploration\fP< UtilityValue, FrequencyType >::\fBExploration\fP (const \fBExploration\fP< UtilityValue, FrequencyType > & o)\fC [inline]\fP"
+
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> virtual \fBrl::Exploration\fP< UtilityValue, FrequencyType >::~\fBExploration\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename UtilityValue  = float, typename FrequencyType  = unsigned int> virtual \fBUtilityT\fP \fBrl::Exploration\fP< UtilityValue, FrequencyType >::getEstimatedReward (const \fBUtilityT\fP & u, const \fBFrequencyT\fP & f) const\fC [pure virtual]\fP"
+returns an estimation of the expected reward given the utility u (e\&.g\&. of doing an action in a particular state) and the frequency f how often this has been tried before\&. 
+.PP
+Implemented in \fBrl::NoExploration< UtilityValue, FrequencyType >\fP, and \fBrl::SimpleExploration< UtilityValue, FrequencyType >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

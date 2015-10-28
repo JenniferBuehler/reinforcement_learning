@@ -1,0 +1,141 @@
+.TH "rl::SelectedReward< State, Value >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::SelectedReward< State, Value > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Reward\&.h>\fP
+.PP
+Inherits \fBrl::Reward< State, Value >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef Value \fBValueT\fP"
+.br
+.ti -1c
+.RI "typedef \fBReward\fP< \fBStateT\fP, \fBValueT\fP > \fBParentT\fP"
+.br
+.ti -1c
+.RI "typedef std::pair< \fBStateT\fP, \fBValueT\fP > \fBStateValuePairT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSelectedReward\fP (const \fBValueT\fP &_defaultValue)"
+.br
+.ti -1c
+.RI "\fBSelectedReward\fP (std::deque< \fBStateValuePairT\fP > _specificRewards, const \fBValueT\fP &_defaultValue)  throw (Exception)"
+.br
+.ti -1c
+.RI "\fBSelectedReward\fP (const \fBSelectedReward\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~SelectedReward\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBValueT\fP \fBgetReward\fP (const \fBStateT\fP &s) const "
+.br
+.ti -1c
+.RI "bool \fBaddSpecificReward\fP (const \fBStateT\fP &s, const \fBValueT\fP reward)"
+.br
+.ti -1c
+.RI "bool \fBaddSpecificRewards\fP (std::deque< \fBStateValuePairT\fP > &_specificRewards)"
+.br
+.ti -1c
+.RI "virtual \fBValueT\fP \fBgetOptimisticReward\fP () const "
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::map< \fBStateT\fP, \fBValueT\fP > \fBSpecificRewardsMapT\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBValueT\fP \fBdefaultValue\fP"
+.br
+.ti -1c
+.RI "\fBSpecificRewardsMapT\fP \fBspecificRewards\fP"
+.br
+.ti -1c
+.RI "\fBValueT\fP \fBmaxReward\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, typename Value = float>class rl::SelectedReward< State, Value >"
+Specific states can be associated with a specific reward, and all other states will receive the default reward 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> typedef \fBReward\fP<\fBStateT\fP,\fBValueT\fP> \fBrl::SelectedReward\fP< State, Value >::\fBParentT\fP"
+
+.SS "template<class State , typename Value  = float> typedef std::map<\fBStateT\fP,\fBValueT\fP> \fBrl::SelectedReward\fP< State, Value >::\fBSpecificRewardsMapT\fP\fC [protected]\fP"
+
+.SS "template<class State , typename Value  = float> typedef State \fBrl::SelectedReward\fP< State, Value >::\fBStateT\fP"
+
+.SS "template<class State , typename Value  = float> typedef std::pair<\fBStateT\fP,\fBValueT\fP> \fBrl::SelectedReward\fP< State, Value >::\fBStateValuePairT\fP"
+
+.SS "template<class State , typename Value  = float> typedef Value \fBrl::SelectedReward\fP< State, Value >::\fBValueT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> \fBrl::SelectedReward\fP< State, Value >::\fBSelectedReward\fP (const \fBValueT\fP & _defaultValue)\fC [inline]\fP, \fC [explicit]\fP"
+
+.SS "template<class State , typename Value  = float> \fBrl::SelectedReward\fP< State, Value >::\fBSelectedReward\fP (std::deque< \fBStateValuePairT\fP > _specificRewards, const \fBValueT\fP & _defaultValue)\fBException\fP\fC [inline]\fP"
+
+.SS "template<class State , typename Value  = float> \fBrl::SelectedReward\fP< State, Value >::\fBSelectedReward\fP (const \fBSelectedReward\fP< State, Value > & o)\fC [inline]\fP"
+
+.SS "template<class State , typename Value  = float> virtual \fBrl::SelectedReward\fP< State, Value >::~\fBSelectedReward\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> bool \fBrl::SelectedReward\fP< State, Value >::addSpecificReward (const \fBStateT\fP & s, const \fBValueT\fP reward)\fC [inline]\fP"
+
+.SS "template<class State , typename Value  = float> bool \fBrl::SelectedReward\fP< State, Value >::addSpecificRewards (std::deque< \fBStateValuePairT\fP > & _specificRewards)\fC [inline]\fP"
+
+.SS "template<class State , typename Value  = float> virtual \fBValueT\fP \fBrl::SelectedReward\fP< State, Value >::getOptimisticReward () const\fC [inline]\fP, \fC [virtual]\fP"
+gets an optimistic estimate of the reward, usually this would be the maximum reward possible in any state\&. 
+.PP
+Implements \fBrl::Reward< State, Value >\fP\&.
+.SS "template<class State , typename Value  = float> virtual \fBValueT\fP \fBrl::SelectedReward\fP< State, Value >::getReward (const \fBStateT\fP & s) const\fC [inline]\fP, \fC [virtual]\fP"
+Gets the reward given a state 
+.PP
+Implements \fBrl::Reward< State, Value >\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class State , typename Value  = float> \fBValueT\fP \fBrl::SelectedReward\fP< State, Value >::defaultValue\fC [protected]\fP"
+
+.SS "template<class State , typename Value  = float> \fBValueT\fP \fBrl::SelectedReward\fP< State, Value >::maxReward\fC [protected]\fP"
+
+.SS "template<class State , typename Value  = float> \fBSpecificRewardsMapT\fP \fBrl::SelectedReward\fP< State, Value >::specificRewards\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

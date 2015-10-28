@@ -1,0 +1,185 @@
+.TH "rl::PolicyIterationUpdate< State, Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::PolicyIterationUpdate< State, Action > \- Implements one iteration update for policy iteration algorithm\&. method \fBpreApplication()\fP has to be called, before this update is applied to all states of the domain\&. method isChanged() can be used to see whether no changes have been made on the policy during an update\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PolicyIteration\&.h>\fP
+.PP
+Inherits \fBrl::StateAlgorithm< State >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef State \fBStateT\fP"
+.br
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicyIterationUpdate\fP< \fBStateT\fP, \fBActionT\fP > \fBPolicyIterationUpdateT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBPolicyIterationUpdateT\fP > \fBPolicyIterationUpdatePtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBPolicyIterationUpdateT\fP > \fBPolicyIterationUpdateConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef float \fBFloatT\fP"
+.br
+.ti -1c
+.RI "typedef \fBUtility\fP< \fBStateT\fP, \fBFloatT\fP > \fBUtilityT\fP"
+.br
+.ti -1c
+.RI "typedef \fBReward\fP< \fBStateT\fP, \fBFloatT\fP > \fBRewardT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransition\fP< \fBStateT\fP, \fBActionT\fP > \fBTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionT::StateTransitionListT\fP \fBStateTransitionListT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGenerator\fP< \fBActionT\fP > \fBActionGeneratorT\fP"
+.br
+.ti -1c
+.RI "typedef \fBMaxUtilityActionAlgorithm\fP< \fBStateT\fP, \fBActionT\fP > \fBMaxUtilityActionAlgorithmT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicy\fP< \fBStateT\fP, \fBActionT\fP > \fBPolicyT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBActionGeneratorConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBTransitionT::TransitionConstPtrT\fP \fBTransitionConstPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBPolicyT::PolicyPtrT\fP \fBPolicyPtrT\fP"
+.br
+.ti -1c
+.RI "typedef \fBUtilityT::UtilityPtrT\fP \fBUtilityPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolicyIterationUpdate\fP (\fBUtilityPtrT\fP &u, const \fBTransitionConstPtrT\fP &t, const \fBPolicyPtrT\fP &p, const \fBActionGeneratorConstPtrT\fP &ag)"
+.br
+.ti -1c
+.RI "virtual \fB~PolicyIterationUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBpreApplication\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBapply\fP (const \fBStateT\fP &s)"
+.br
+.ti -1c
+.RI "bool \fBisUnchanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetUtility\fP (\fBUtilityPtrT\fP ut)"
+.br
+.ti -1c
+.RI "\fBPolicyPtrT\fP \fBgetPolicy\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action>class rl::PolicyIterationUpdate< State, Action >"
+Implements one iteration update for policy iteration algorithm\&. method \fBpreApplication()\fP has to be called, before this update is applied to all states of the domain\&. method isChanged() can be used to see whether no changes have been made on the policy during an update\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State , class Action > typedef \fBActionGeneratorT::ActionGeneratorConstPtrT\fP \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBActionGeneratorConstPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBActionGenerator\fP<\fBActionT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBActionGeneratorT\fP"
+
+.SS "template<class State , class Action > typedef Action \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBActionT\fP"
+
+.SS "template<class State , class Action > typedef float \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBFloatT\fP"
+
+.SS "template<class State , class Action > typedef \fBMaxUtilityActionAlgorithm\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBMaxUtilityActionAlgorithmT\fP"
+
+.SS "template<class State , class Action > typedef std::shared_ptr<const \fBPolicyIterationUpdateT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBPolicyIterationUpdateConstPtrT\fP"
+
+.SS "template<class State , class Action > typedef std::shared_ptr<\fBPolicyIterationUpdateT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBPolicyIterationUpdatePtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBPolicyIterationUpdate\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBPolicyIterationUpdateT\fP"
+
+.SS "template<class State , class Action > typedef \fBPolicyT::PolicyPtrT\fP \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBPolicyPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBPolicy\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBPolicyT\fP"
+
+.SS "template<class State , class Action > typedef \fBReward\fP<\fBStateT\fP,\fBFloatT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBRewardT\fP"
+
+.SS "template<class State , class Action > typedef State \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBStateT\fP"
+
+.SS "template<class State , class Action > typedef \fBTransitionT::StateTransitionListT\fP \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBStateTransitionListT\fP"
+
+.SS "template<class State , class Action > typedef \fBTransitionT::TransitionConstPtrT\fP \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBTransitionConstPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBTransition\fP<\fBStateT\fP,\fBActionT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBTransitionT\fP"
+
+.SS "template<class State , class Action > typedef \fBUtilityT::UtilityPtrT\fP \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBUtilityPtrT\fP"
+
+.SS "template<class State , class Action > typedef \fBUtility\fP<\fBStateT\fP,\fBFloatT\fP> \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBUtilityT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State , class Action > \fBrl::PolicyIterationUpdate\fP< State, Action >::\fBPolicyIterationUpdate\fP (\fBUtilityPtrT\fP & u, const \fBTransitionConstPtrT\fP & t, const \fBPolicyPtrT\fP & p, const \fBActionGeneratorConstPtrT\fP & ag)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu\fP correctly initialised (but still empty/unlearned) model of utility\&. This object will be changed in the course of applying this \fBStateAlgorithm\fP\&. 
+.br
+\fIp\fP correctly initialised (but still empty/unlearned) policy\&. This object will be changed in the course of applying this \fBStateAlgorithm\fP\&. 
+.br
+\fIt\fP correctly initialised transition model\&. 
+.br
+\fIag\fP action generator (generates all possible actions) for domaon\&. 
+.RE
+.PP
+
+.SS "template<class State , class Action > virtual \fBrl::PolicyIterationUpdate\fP< State, Action >::~\fBPolicyIterationUpdate\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State , class Action > virtual bool \fBrl::PolicyIterationUpdate\fP< State, Action >::apply (const \fBStateT\fP & s)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBrl::StateAlgorithm< State >\fP\&.
+.SS "template<class State , class Action > \fBPolicyPtrT\fP \fBrl::PolicyIterationUpdate\fP< State, Action >::getPolicy ()\fC [inline]\fP"
+
+.SS "template<class State , class Action > bool \fBrl::PolicyIterationUpdate\fP< State, Action >::isUnchanged ()\fC [inline]\fP"
+
+.SS "template<class State , class Action > void \fBrl::PolicyIterationUpdate\fP< State, Action >::preApplication ()\fC [inline]\fP"
+Has to be called before applying all states (see method apply(StateT&) )\&. Evaluates the policy\&. 
+.SS "template<class State , class Action > void \fBrl::PolicyIterationUpdate\fP< State, Action >::setUtility (\fBUtilityPtrT\fP ut)\fC [inline]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

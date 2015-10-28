@@ -1,0 +1,156 @@
+.TH "rl::TransitionStlMap< State, Action, StateActionStateValue >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::TransitionStlMap< State, Action, StateActionStateValue > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Transition\&.h>\fP
+.PP
+Inherits \fBrl::Transition< State, Action, StateActionStateValue >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBTransition\fP< State, Action, StateActionStateValue > \fBParentT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateTransitionListT\fP \fBStateTransitionListT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateTransitionT\fP \fBStateTransitionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateActionStateValueT\fP \fBStateActionStateValueT\fP"
+.br
+.ti -1c
+.RI "typedef \fBParentT::StateTransitionListPtrT\fP \fBStateTransitionListPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransitionStlMap\fP ()"
+.br
+.ti -1c
+.RI "\fBTransitionStlMap\fP (const \fBTransitionStlMap\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~TransitionStlMap\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBgetTransitionStates\fP (const State &s, const Action &a, \fBStateTransitionListPtrT\fP &ret) const "
+.br
+.ti -1c
+.RI "virtual void \fBsetTransitionState\fP (const State &s1, const Action &a, const State &s2, \fBStateActionStateValueT\fP p=1)"
+.br
+.ti -1c
+.RI "virtual void \fBprint\fP (std::ostream &o) const "
+.br
+.ti -1c
+.RI "virtual bool \fBgetTransitionStatesNonConst\fP (const State &s, const Action &a, \fBStateTransitionListPtrT\fP &ret)"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBStateActionPair\fP< State, Action > \fBStateActionPairT\fP"
+.br
+.ti -1c
+.RI "typedef std::map< \fBStateActionPairT\fP, \fBStateTransitionListPtrT\fP > \fBTransitionMapT\fP"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBequal\fP (const State &s1, const State &s2)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTransitionMapT\fP \fBt\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class State, class Action, typename StateActionStateValue = float>class rl::TransitionStlMap< State, Action, StateActionStateValue >"
+This implementation can be used to store a learned transition map (by experienced state transitions) by simply storing the observed frequencies/probabilities in a map\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBTransition\fP<State,Action,StateActionStateValue> \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBParentT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBStateActionPair\fP<State,Action> \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBStateActionPairT\fP\fC [protected]\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBParentT::StateActionStateValueT\fP \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBStateActionStateValueT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBParentT::StateTransitionListPtrT\fP \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBStateTransitionListPtrT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBParentT::StateTransitionListT\fP \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBStateTransitionListT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef \fBParentT::StateTransitionT\fP \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBStateTransitionT\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> typedef std::map<\fBStateActionPairT\fP, \fBStateTransitionListPtrT\fP> \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBTransitionMapT\fP\fC [protected]\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class State, class Action, typename StateActionStateValue = float> \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBTransitionStlMap\fP ()\fC [inline]\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::\fBTransitionStlMap\fP (const \fBTransitionStlMap\fP< State, Action, StateActionStateValue > & o)\fC [inline]\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::~\fBTransitionStlMap\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class State, class Action, typename StateActionStateValue = float> static bool \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::equal (const State & s1, const State & s2)\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual bool \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::getTransitionStates (const State & s, const Action & a, \fBStateTransitionListPtrT\fP & ret) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+false if no such transition states exist (remain in same state with this action), and true if parameter ret is initialised with the result set\&. 
+.RE
+.PP
+
+.PP
+Implements \fBrl::Transition< State, Action, StateActionStateValue >\fP\&.
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual bool \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::getTransitionStatesNonConst (const State & s, const Action & a, \fBStateTransitionListPtrT\fP & ret)\fC [inline]\fP, \fC [virtual]\fP"
+
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual void \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::print (std::ostream & o) const\fC [inline]\fP, \fC [virtual]\fP"
+prints the transition map 
+.PP
+Implements \fBrl::Transition< State, Action, StateActionStateValue >\fP\&.
+.PP
+Reimplemented in \fBrl::LearnableTransitionMap< State, Action >\fP\&.
+.SS "template<class State, class Action, typename StateActionStateValue = float> virtual void \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::setTransitionState (const State & s1, const Action & a, const State & s2, \fBStateActionStateValueT\fP p = \fC1\fP)\fC [inline]\fP, \fC [virtual]\fP"
+Adds a transition state, or if this transition (s1,a,s2) does exist, the assigned value p is updated\&. 
+.PP
+Implements \fBrl::Transition< State, Action, StateActionStateValue >\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class State, class Action, typename StateActionStateValue = float> \fBTransitionMapT\fP \fBrl::TransitionStlMap\fP< State, Action, StateActionStateValue >::t\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

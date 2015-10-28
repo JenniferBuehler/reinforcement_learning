@@ -1,0 +1,87 @@
+.TH "rl::ActionAlgorithm< Action >" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::ActionAlgorithm< Action > \- An algorithm to operate on one Action object\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <StateAlgorithms\&.h>\fP
+.PP
+Inherited by \fBrl::MaxUtilityActionAlgorithm< State, Action >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Action \fBActionT\fP"
+.br
+.ti -1c
+.RI "typedef \fBActionAlgorithm\fP< \fBActionT\fP > \fBActionAlgorithmT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBActionAlgorithmT\fP > \fBActionAlgorithmPtrT\fP"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< const \fBActionAlgorithmT\fP > \fBActionAlgorithmConstPtrT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBActionAlgorithm\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ActionAlgorithm\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBapply\fP (const \fBActionT\fP &a)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class Action>class rl::ActionAlgorithm< Action >"
+An algorithm to operate on one Action object\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<class Action> typedef std::shared_ptr<const \fBActionAlgorithmT\fP> \fBrl::ActionAlgorithm\fP< Action >::\fBActionAlgorithmConstPtrT\fP"
+
+.SS "template<class Action> typedef std::shared_ptr<\fBActionAlgorithmT\fP> \fBrl::ActionAlgorithm\fP< Action >::\fBActionAlgorithmPtrT\fP"
+
+.SS "template<class Action> typedef \fBActionAlgorithm\fP<\fBActionT\fP> \fBrl::ActionAlgorithm\fP< Action >::\fBActionAlgorithmT\fP"
+
+.SS "template<class Action> typedef Action \fBrl::ActionAlgorithm\fP< Action >::\fBActionT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class Action> \fBrl::ActionAlgorithm\fP< Action >::\fBActionAlgorithm\fP ()\fC [inline]\fP"
+
+.SS "template<class Action> virtual \fBrl::ActionAlgorithm\fP< Action >::~\fBActionAlgorithm\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class Action> virtual bool \fBrl::ActionAlgorithm\fP< Action >::apply (const \fBActionT\fP & a)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBrl::QLearningController< Domain, UtilityType >::MaxExpectedUtility\fP, and \fBrl::MaxUtilityActionAlgorithm< State, Action >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.

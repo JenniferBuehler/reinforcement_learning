@@ -1,0 +1,116 @@
+.TH "rl::ActionBase" 3 "Wed Oct 28 2015" "LearningAlgorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rl::ActionBase \- Base class for all action types to be performed\&. This must include ALL possible actions in a domain within the SAME implementing subclass\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Action\&.h>\fP
+.PP
+Inherited by \fBrl::MoveAction\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned int \fBSubActionHandleT\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBActionBase\fP ()"
+.br
+.ti -1c
+.RI "\fBActionBase\fP (const \fBActionBase\fP &o)"
+.br
+.ti -1c
+.RI "virtual \fB~ActionBase\fP ()"
+.br
+.ti -1c
+.RI "\fBActionBase\fP & \fBoperator=\fP (const \fBActionBase\fP &o)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBActionBase\fP &s) const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBassign\fP (const \fBActionBase\fP &o)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBless\fP (const \fBActionBase\fP &s) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBprint\fP (std::ostream &o) const =0"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &o, const \fBActionBase\fP &s)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for all action types to be performed\&. This must include ALL possible actions in a domain within the SAME implementing subclass\&. 
+
+Example for the grid world: A derived class can contain all actions up/down/left/right\&.
+.PP
+All subclasses should have the copy constructor and assignment operators implemented (using the same class type as paramter for the assignment operator)\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Jennifer Buehler 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 2011
+.RE
+.PP
+Inheriting classes MUST support the copy operator! 
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef unsigned int \fBrl::ActionBase::SubActionHandleT\fP"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "rl::ActionBase::ActionBase ()\fC [inline]\fP"
+
+.SS "rl::ActionBase::ActionBase (const \fBActionBase\fP & o)\fC [inline]\fP"
+
+.SS "virtual rl::ActionBase::~ActionBase ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void rl::ActionBase::assign (const \fBActionBase\fP & o)\fC [protected]\fP, \fC [pure virtual]\fP"
+Assign another object of the same type (to work as a copy constructor)\&. This will need a dynamic_cast in the subclass\&. If it's not of the same type or can't be assigned, an exception could be thrown or a warning printed\&. It is also stronly recommended to implement a = operator for all subclasses, for efficiency reasons when using templates\&. This method is only supplied to enforce consistency\&. It will be called from this base class = operator\&. 
+.PP
+Implemented in \fBrl::MoveAction\fP\&.
+.SS "virtual bool rl::ActionBase::less (const \fBActionBase\fP & s) const\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBrl::MoveAction\fP\&.
+.SS "bool rl::ActionBase::operator< (const \fBActionBase\fP & s) const\fC [inline]\fP"
+
+.SS "\fBActionBase\fP& rl::ActionBase::operator= (const \fBActionBase\fP & o)\fC [inline]\fP"
+
+.SS "virtual void rl::ActionBase::print (std::ostream & o) const\fC [protected]\fP, \fC [pure virtual]\fP"
+print description of the state into ostream o, and return o\&. 
+.PP
+Implemented in \fBrl::MoveAction\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream & o, const \fBActionBase\fP & s)\fC [friend]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LearningAlgorithms from the source code\&.
