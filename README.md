@@ -4,7 +4,7 @@ MDP and Q-Learning algorithms developed during a project at UNSW in 2011.
 
 # Documentation
 
-More documentation can be found in the [PDF](../../Documentation.pdf) and in the html files in the *doc* folder.
+More documentation can be found in the PDF (Documentation.pdf) and in the html files in the *doc* folder.
 
 
 # Installation
