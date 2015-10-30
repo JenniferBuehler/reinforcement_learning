@@ -1,23 +1,28 @@
-# reinforcement_learning
+# Reinforcement learning
+
 MDP and Q-Learning algorithms developed during a project at UNSW in 2011.
 
-# Installation:
+# Documentation
 
-mkdir build
-cd build
-cmake ..
-make
+More documentation can be found in the [PDF](../../Documentation.pdf) and in the html files in the *doc* folder.
+
+
+# Installation
+
+``mkdir build``
+
+``cd build``
+
+``cmake ..``
+
+``make``
 
 
 # Execution
 
 To execute the test on the grid world, run
 
-```./demoGridWorldDemo --value-iteration | --poliy-iteration | --q-learning```
-
-# Documentation
-
-More documentation can be found in the PDF and in the html files in the *doc* folder.
+``./demoGridWorldDemo --value-iteration | --poliy-iteration | --q-learning``
 
 # Note
 

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
   ['makeptr',['makePtr',['../classrl_1_1_utility.html#a2fab38157e3417047b33b7e68a592a6b',1,'rl::Utility']]],
   ['mappedutility',['MappedUtility',['../classrl_1_1_mapped_utility.html#a402abdd60db732f0d8d1e36c26bc0773',1,'rl::MappedUtility::MappedUtility(const ValueT &amp;_defaultValue=0)'],['../classrl_1_1_mapped_utility.html#a37ac4ef63fca82641625578d2b381cc2',1,'rl::MappedUtility::MappedUtility(const MappedUtility &amp;o)']]],
   ['maxexpectedutility',['MaxExpectedUtility',['../classrl_1_1_q_learning_controller_1_1_max_expected_utility.html#aac38c2b9c59ee52bab07219bce0c5c5a',1,'rl::QLearningController::MaxExpectedUtility']]],

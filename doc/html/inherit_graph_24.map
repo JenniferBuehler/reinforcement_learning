@@ -1,4 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classrl_1_1_transition.html" title="rl::Transition\&lt; GridWorld\lState, MoveAction \&gt;" alt="" coords="5,5,169,47"/>
-<area shape="rect" id="node2" href="$classrl_1_1_grid_world_transition.html" title="Simple transition function which is known a priori for the grid world and does not have to be learned..." alt="" coords="217,13,369,39"/>
-</map>

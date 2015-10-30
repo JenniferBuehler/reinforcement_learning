@@ -1,4 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classrl_1_1_utility.html" title="Implements the utility function which expresses the utility of a state. This can be a function or a l..." alt="" coords="5,5,124,47"/>
-<area shape="rect" id="node2" href="$classrl_1_1_mapped_utility.html" title="rl::MappedUtility\&lt;\l State, Value \&gt;" alt="" coords="172,5,297,47"/>
-</map>

@@ -32,6 +32,7 @@ var searchData=
   ['print_5finit',['PRINT_INIT',['../_log_binding_8h.html#a3ce6cf7577c47030f06807e9a7c1813e',1,'LogBinding.h']]],
   ['printerror',['printError',['../class_log.html#a813827da4123392ad072a9256d0ae97e',1,'Log::printError(const std::stringstream &amp;str)'],['../class_log.html#a03f1a141fc5b045afd16dcc47c80bdb5',1,'Log::printError(const char *str)'],['../_log_binding_8h.html#a612e03c6843e4d31f615c95555a1ac72',1,'PRINTERROR():&#160;LogBinding.h']]],
   ['printerrorln',['printErrorLn',['../class_log.html#affb1ed8654f930f2d704646595341f3e',1,'Log::printErrorLn(const std::stringstream &amp;str)'],['../class_log.html#abbf4a948936da4fb2bc488768a6bf7a2',1,'Log::printErrorLn(const char *str)']]],
+  ['printhelp',['printHelp',['../main_8cpp.html#a34b7af84f424fc1265b17acb46f79a2d',1,'main.cpp']]],
   ['println',['printLn',['../class_log.html#ae8d9c62ad56c7d3ba77d3bfca0a855da',1,'Log::printLn(const std::stringstream &amp;str)'],['../class_log.html#aa517771b25b379c63e4d62c995fe3eb8',1,'Log::printLn(const char *str)']]],
   ['printmsg',['PRINTMSG',['../_log_binding_8h.html#a66bcd816c618da68fe5f461d1d9f487b',1,'LogBinding.h']]],
   ['printqvalues',['printQValues',['../classrl_1_1_q_learning_controller.html#a6c043120b2ebbb03ee5a83791ba2658b',1,'rl::QLearningController']]],

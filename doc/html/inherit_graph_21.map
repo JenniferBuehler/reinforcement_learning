@@ -1,4 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classrl_1_1_state_base.html" title="Base class for all states possible in a domain. This must include ALL possible states in a domain wit..." alt="" coords="5,5,104,32"/>
-<area shape="rect" id="node2" href="$classrl_1_1_grid_world_state.html" title="State of the grid world. " alt="" coords="152,5,279,32"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="/home/jenny/RL/rl_only/include/rl/Action.h" name="/home/jenny/RL/rl_only/include/rl/Action.h">
-<area shape="rect" id="node2" href="$_max_utility_8h.html" title="/home/jenny/RL/rl_only\l/include/rl/MaxUtility.h" alt="" coords="24,184,180,225"/>
-<area shape="rect" id="node3" href="$_policy_iteration_8h.html" title="/home/jenny/RL/rl_only\l/include/rl/PolicyIteration.h" alt="" coords="338,273,514,315"/>
-<area shape="rect" id="node4" href="$_value_iteration_8h.html" title="/home/jenny/RL/rl_only\l/include/rl/ValueIteration.h" alt="" coords="16,273,189,315"/>
-<area shape="rect" id="node5" href="$_state_algorithms_8h.html" title="/home/jenny/RL/rl_only\l/include/rl/StateAlgorithms.h" alt="" coords="241,95,428,136"/>
-<area shape="rect" id="node6" href="$_domain_8h.html" title="/home/jenny/RL/rl_only\l/include/rl/Domain.h" alt="" coords="539,184,695,225"/>
-<area shape="rect" id="node7" href="$_grid_world_8h.html" title="/home/jenny/RL/rl_only\l/include/rl/GridWorld.h" alt="" coords="539,273,695,315"/>
-<area shape="rect" id="node8" href="$_q_learning_8h.html" title="/home/jenny/RL/rl_only\l/include/rl/QLearning.h" alt="" coords="256,184,412,225"/>
-</map>

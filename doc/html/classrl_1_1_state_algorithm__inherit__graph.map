@@ -1,6 +1,0 @@
-<map id="rl::StateAlgorithm&lt; State &gt;" name="rl::StateAlgorithm&lt; State &gt;">
-<area shape="rect" id="node2" href="$classrl_1_1_policy_generation_algorithm.html" title="Generates a policy out of a utility and transition function. " alt="" coords="176,5,367,47"/>
-<area shape="rect" id="node3" href="$classrl_1_1_policy_initialisation.html" title="rl::PolicyInitialisation\l\&lt; State \&gt;" alt="" coords="200,71,343,112"/>
-<area shape="rect" id="node4" href="$classrl_1_1_policy_iteration_update.html" title="Implements one iteration update for policy iteration algorithm. method preApplication() has to be cal..." alt="" coords="190,136,353,177"/>
-<area shape="rect" id="node5" href="$classrl_1_1_value_iteration_update.html" title="rl::ValueIterationUpdate\l\&lt; State \&gt;" alt="" coords="192,201,351,243"/>
-</map>

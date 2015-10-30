@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classrl_1_1_transition.html" title="rl::Transition\&lt; State,\l Action, float \&gt;" alt="" coords="5,5,147,47"/>
-<area shape="rect" id="node2" href="$classrl_1_1_transition_stl_map.html" title="rl::TransitionStlMap\l\&lt; State, Action, float \&gt;" alt="" coords="195,5,349,47"/>
-<area shape="rect" id="node3" href="$classrl_1_1_learnable_transition_map.html" title="A transition map which can be learned. Implements TransitionStlMap for holding probabilities, and uses another TransitionStlMap (with StateActionStateValue = integer) to count the total number experienceTransition() was called on a transition. " alt="" coords="397,5,572,47"/>
-</map>
