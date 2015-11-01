@@ -1,5 +1,6 @@
 #ifndef __REWARD_H__
 #define __REWARD_H__
+// Copyright Jennifer Buehler
 
 #include <map>
 #include <deque>
@@ -7,7 +8,8 @@
 #include <rl/LogBinding.h>
 #include <general/Exception.h>
 
-namespace rl{
+namespace rl
+{
 
 /**
  * \brief Implements the reward function.
@@ -23,27 +25,28 @@ namespace rl{
  * \date May 2011
  *
  */
-template<class State, typename Value=float>
-class Reward{
+template<class State, typename Value = float>
+class Reward
+{
 public:
-	typedef Value ValueT;
-	typedef State StateT;
-	typedef Reward<StateT,ValueT> RewardT;
-	typedef typename std::shared_ptr<RewardT> RewardPtrT;
-	typedef typename std::shared_ptr<const RewardT> RewardConstPtrT;
+    typedef Value ValueT;
+    typedef State StateT;
+    typedef Reward<StateT, ValueT> RewardT;
+    typedef typename std::shared_ptr<RewardT> RewardPtrT;
+    typedef typename std::shared_ptr<const RewardT> RewardConstPtrT;
 
-	Reward(){}
-	Reward(const Reward& o){}
-	virtual ~Reward(){}
-	/**
-	 * Gets the reward given a state
-	 */
-	virtual ValueT getReward(const State& s)const =0;
-	/**
-	 * gets an optimistic estimate of the reward, usually
-	 * this would be the maximum reward possible in any state.
-	 */
-	virtual ValueT getOptimisticReward()const =0;
+    Reward() {}
+    Reward(const Reward& o) {}
+    virtual ~Reward() {}
+    /**
+     * Gets the reward given a state
+     */
+    virtual ValueT getReward(const State& s)const = 0;
+    /**
+     * gets an optimistic estimate of the reward, usually
+     * this would be the maximum reward possible in any state.
+     */
+    virtual ValueT getOptimisticReward()const = 0;
 
 protected:
 
@@ -56,67 +59,77 @@ protected:
  * \author Jennifer Buehler
  * \date May 2011
  */
-template<class State, typename Value=float>
-class SelectedReward: public Reward<State,Value> {
+template<class State, typename Value = float>
+class SelectedReward: public Reward<State, Value>
+{
 public:
-	typedef State StateT;
-	typedef Value ValueT;
-	typedef Reward<StateT,ValueT> ParentT;
-	typedef std::pair<StateT,ValueT> StateValuePairT;
+    typedef State StateT;
+    typedef Value ValueT;
+    typedef Reward<StateT, ValueT> ParentT;
+    typedef std::pair<StateT, ValueT> StateValuePairT;
 
-	explicit SelectedReward(const ValueT& _defaultValue): ParentT(),defaultValue(_defaultValue),maxReward(_defaultValue){}
+    explicit SelectedReward(const ValueT& _defaultValue): ParentT(), defaultValue(_defaultValue), maxReward(_defaultValue) {}
 
-	SelectedReward(std::deque<StateValuePairT> _specificRewards, const ValueT& _defaultValue) 
-		throw (Exception)
-		: defaultValue(_defaultValue), maxReward(_defaultValue),ParentT() {
+    SelectedReward(std::deque<StateValuePairT> _specificRewards, const ValueT& _defaultValue)
+    throw (Exception)
+        : defaultValue(_defaultValue), maxReward(_defaultValue), ParentT()
+    {
 
-		if (!addSpecificRewards(_specificRewards)) throw Exception("Could not initialise specific rewards",__FILE__,__LINE__);
-	}
+        if (!addSpecificRewards(_specificRewards)) throw Exception("Could not initialise specific rewards", __FILE__, __LINE__);
+    }
 
-	SelectedReward(const SelectedReward& o): defaultValue(o.defaultValue), ParentT(o){}
-	virtual ~SelectedReward(){}
+    SelectedReward(const SelectedReward& o): defaultValue(o.defaultValue), ParentT(o) {}
+    virtual ~SelectedReward() {}
 
-	virtual ValueT getReward(const StateT& s)const{
-		typename SpecificRewardsMapT::const_iterator it = specificRewards.find(s);
-		if (it==specificRewards.end()){ //no specific reward for this state
-			return defaultValue;
-		}
-		return it->second;
-	}
+    virtual ValueT getReward(const StateT& s)const
+    {
+        typename SpecificRewardsMapT::const_iterator it = specificRewards.find(s);
+        if (it == specificRewards.end()) //no specific reward for this state
+        {
+            return defaultValue;
+        }
+        return it->second;
+    }
 
-	bool addSpecificReward(const StateT& s, const ValueT reward){
-		if (!specificRewards.insert(std::make_pair(s,reward)).second){
-			PRINTERROR("Double special reward state "<<s<<" encountered!");
-			return false;
-		}
-		if (reward > maxReward) maxReward=reward;
-		return true;
-	}
+    bool addSpecificReward(const StateT& s, const ValueT reward)
+    {
+        if (!specificRewards.insert(std::make_pair(s, reward)).second)
+        {
+            PRINTERROR("Double special reward state " << s << " encountered!");
+            return false;
+        }
+        if (reward > maxReward) maxReward = reward;
+        return true;
+    }
 
-	bool addSpecificRewards(std::deque<StateValuePairT>& _specificRewards){
-		typename std::deque<StateValuePairT>::iterator it;
-		for (it=_specificRewards.begin(); it!=_specificRewards.end(); ++it) {
-			if (!addSpecificReward(it->first,it->second)){
-				PRINTERROR("Could not insert reward state "<<it->first<<" encountered!");
-				return false;
-			}
-		}
-		return true;
-	}
+    bool addSpecificRewards(std::deque<StateValuePairT>& _specificRewards)
+    {
+        typename std::deque<StateValuePairT>::iterator it;
+        for (it = _specificRewards.begin(); it != _specificRewards.end(); ++it)
+        {
+            if (!addSpecificReward(it->first, it->second))
+            {
+                PRINTERROR("Could not insert reward state " << it->first << " encountered!");
+                return false;
+            }
+        }
+        return true;
+    }
 
-	virtual ValueT getOptimisticReward()const{
-		return maxReward*1.1; //overestimation of best reward
-	}
+    virtual ValueT getOptimisticReward()const
+    {
+        return maxReward * 1.1; //overestimation of best reward
+    }
 
 protected:
 
-	ValueT defaultValue;
-	typedef std::map<StateT,ValueT> SpecificRewardsMapT; 
-	SpecificRewardsMapT specificRewards;
-	ValueT maxReward;
- 
+    ValueT defaultValue;
+    typedef std::map<StateT, ValueT> SpecificRewardsMapT;
+    SpecificRewardsMapT specificRewards;
+    ValueT maxReward;
+
 private:
-	SelectedReward(){}
+    SelectedReward() {}
 };
 
 }

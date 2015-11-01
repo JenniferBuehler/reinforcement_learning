@@ -9,8 +9,6 @@ ADD_DEFINITIONS(
     -std=c++11 -g 
 )
 
-
-
 add_subdirectory (src)
 add_subdirectory (include)
 
@@ -28,6 +26,7 @@ add_custom_target(doc
 	COMMENT "Generating API documentation with Doxygen" VERBATIM
 )
 endif(DOXYGEN_FOUND)
+
 
 
 # Add executable called "helloDemo" that is built from the source files
